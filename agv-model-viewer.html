@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGV 模型展示</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    
+    canvas {
+      display: block;
+    }
+    
+    .info-panel {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 24px;
+      color: #e2e8f0;
+      max-width: 320px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .info-panel::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .info-panel::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+    
+    .info-panel::-webkit-scrollbar-thumb {
+      background: rgba(249, 115, 22, 0.5);
+      border-radius: 3px;
+    }
+    
+    .info-panel h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .info-panel p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 12px;
+    }
+    
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 16px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .agv-list {
+      margin-top: 8px;
+    }
+    
+    .agv-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    
+    .agv-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(4px);
+    }
+    
+    .agv-item.selected {
+      background: rgba(249, 115, 22, 0.15);
+      border-color: rgba(249, 115, 22, 0.4);
+    }
+    
+    .status-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+    }
+    
+    .status-indicator.running {
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+    
+    .status-indicator.idle {
+      background: #3b82f6;
+      box-shadow: 0 0 8px #3b82f6;
+    }
+    
+    .status-indicator.error {
+      background: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
+      animation: pulse-error 1s infinite;
+    }
+    
+    .status-indicator.charging {
+      background: #eab308;
+      box-shadow: 0 0 8px #eab308;
+      animation: pulse-charging 1.5s infinite;
+    }
+    
+    @keyframes pulse-error {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    @keyframes pulse-charging {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    
+    .agv-info {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .agv-id {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    
+    .agv-status {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+    
+    .agv-battery {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .agv-battery.low {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+    }
+    
+    .agv-battery.medium {
+      background: rgba(234, 179, 8, 0.2);
+      color: #eab308;
+    }
+    
+    .agv-battery.high {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+    
+    .stats-panel {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-width: 260px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .stats-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .stats-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    
+    .stats-badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    
+    .stats-badge.running {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+    }
+    
+    .stats-badge.idle {
+      background: rgba(59, 130, 246, 0.2);
+      color: #3b82f6;
+    }
+    
+    .stats-badge.error {
+      background: rgba(239, 68, 68, 0.2);
+      color: #ef4444;
+    }
+    
+    .stats-badge.charging {
+      background: rgba(234, 179, 8, 0.2);
+      color: #eab308;
+    }
+    
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .stat-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .stat-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f97316;
+      margin-top: 4px;
+    }
+    
+    .stat-value.small {
+      font-size: 14px;
+    }
+    
+    .battery-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      margin-top: 8px;
+      overflow: hidden;
+    }
+    
+    .battery-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+    
+    .battery-fill.low { background: linear-gradient(90deg, #ef4444, #f87171); }
+    .battery-fill.medium { background: linear-gradient(90deg, #eab308, #facc15); }
+    .battery-fill.high { background: linear-gradient(90deg, #22c55e, #4ade80); }
+    
+    .position-display {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 8px;
+    }
+    
+    .controls-panel {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: calc(100vw - 40px);
+    }
+    
+    .control-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e2e8f0;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    
+    .control-btn:hover {
+      background: rgba(249, 115, 22, 0.3);
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+    
+    .control-btn.active {
+      background: rgba(249, 115, 22, 0.4);
+      border-color: #f97316;
+    }
+    
+    .control-btn.danger {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+    
+    .control-btn.danger:hover {
+      background: rgba(239, 68, 68, 0.4);
+      border-color: #ef4444;
+    }
+    
+    .control-btn.success {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    
+    .control-btn.success:hover {
+      background: rgba(34, 197, 94, 0.4);
+      border-color: #22c55e;
+    }
+    
+    .filter-group {
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+    
+    .filter-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #94a3b8;
+    }
+    
+    .filter-btn:hover {
+      color: #e2e8f0;
+    }
+    
+    .filter-btn.active {
+      background: rgba(249, 115, 22, 0.3);
+      color: #f97316;
+      border-color: rgba(249, 115, 22, 0.5);
+    }
+    
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid rgba(249, 115, 22, 0.2);
+      border-top-color: #f97316;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .loading-text {
+      margin-top: 16px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .no-selection {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+    }
+    
+    .no-selection-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+    
+    .path-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      margin-top: 12px;
+      cursor: pointer;
+    }
+    
+    .toggle-switch {
+      width: 36px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      position: relative;
+      transition: background 0.2s ease;
+    }
+    
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #e2e8f0;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s ease;
+    }
+    
+    .path-toggle.active .toggle-switch {
+      background: #f97316;
+    }
+    
+    .path-toggle.active .toggle-switch::after {
+      transform: translateX(16px);
+    }
+    
+    .toggle-label {
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">加载 AGV 模型...</div>
+  </div>
+  
+  <div id="canvas-container"></div>
+  
+  <div class="info-panel">
+    <h1>AGV 模型展示</h1>
+    <p>自动导引车（AGV）三维模型管理系统。点击左侧列表选择AGV查看详情，或使用控制面板进行操作。</p>
+    
+    <div class="section-title">AGV 列表</div>
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="running">运行中</button>
+      <button class="filter-btn" data-filter="idle">空闲</button>
+      <button class="filter-btn" data-filter="charging">充电</button>
+      <button class="filter-btn" data-filter="error">故障</button>
+    </div>
+    <div class="agv-list" id="agv-list"></div>
+  </div>
+  
+  <div class="stats-panel" id="stats-panel">
+    <div class="no-selection">
+      <div class="no-selection-icon">🚗</div>
+      <div>请选择一个 AGV</div>
+      <div style="font-size: 12px; margin-top: 4px;">查看详细信息</div>
+    </div>
+  </div>
+  
+  <div class="controls-panel">
+    <button class="control-btn active" id="btn-rotate">自动旋转</button>
+    <button class="control-btn" id="btn-wireframe">线框模式</button>
+    <button class="control-btn" id="btn-explode">分解视图</button>
+    <button class="control-btn" id="btn-reset">重置视角</button>
+    <button class="control-btn" id="btn-pallet-down">托盘低位</button>
+    <button class="control-btn" id="btn-pallet-up">托盘高位</button>
+    <button class="control-btn success" id="btn-add-agv">添加 AGV</button>
+    <button class="control-btn danger" id="btn-remove-agv">移除 AGV</button>
+    <button class="control-btn" id="btn-random-status">随机状态</button>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+
+    const AGV_STATUS_CONFIG = {
+      running: { label: '运行中', color: 0x22c55e, emissive: 0x22c55e },
+      idle: { label: '空闲', color: 0x3b82f6, emissive: 0x3b82f6 },
+      error: { label: '故障', color: 0xef4444, emissive: 0xef4444 },
+      charging: { label: '充电中', color: 0xeab308, emissive: 0xeab308 }
+    };
+
+    let scene, camera, renderer, controls;
+    let agvModels = new Map();
+    let agvData = [];
+    let selectedAGVId = null;
+    let autoRotate = true;
+    let wireframeMode = false;
+    let explodeMode = false;
+    let showPath = false;
+    let currentFilter = 'all';
+    let materials = {};
+    let pathLines = new Map();
+
+    function generateAGVData(count) {
+      const statuses = ['running', 'idle', 'error', 'charging'];
+      const newAGVs = [];
+      
+      for (let i = 0; i < count; i++) {
+        const id = `AGV-${String(agvData.length + i + 1).padStart(3, '0')}`;
+        const x = (Math.random() - 0.5) * 8;
+        const z = (Math.random() - 0.5) * 8;
+        
+        newAGVs.push({
+          id,
+          x,
+          z,
+          rotation: Math.random() * Math.PI * 2,
+          status: statuses[Math.floor(Math.random() * statuses.length)],
+          battery: Math.floor(Math.random() * 60) + 40,
+          speed: Math.random() * 1.5 + 0.5,
+          targetX: x + (Math.random() - 0.5) * 3,
+          targetZ: z + (Math.random() - 0.5) * 3,
+          path: generatePath(x, z)
+        });
+      }
+      
+      return newAGVs;
+    }
+
+    function generatePath(startX, startZ) {
+      const path = [];
+      const points = Math.floor(Math.random() * 5) + 3;
+      let x = startX;
+      let z = startZ;
+      
+      for (let i = 0; i < points; i++) {
+        x += (Math.random() - 0.5) * 2;
+        z += (Math.random() - 0.5) * 2;
+        path.push({ x, z });
+      }
+      
+      return path;
+    }
+
+    function init() {
+      const container = document.getElementById('canvas-container');
+      
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x1a1a2e);
+      
+      camera = new THREE.PerspectiveCamera(
+        45,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(6, 5, 6);
+      
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      container.appendChild(renderer.domElement);
+      
+      controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.minDistance = 3;
+      controls.maxDistance = 15;
+      controls.maxPolarAngle = Math.PI / 2;
+      
+      setupLights();
+      createGround();
+      
+      agvData = generateAGVData(3);
+      agvData.forEach(agv => createAGVModel(agv));
+      
+      renderAGVList();
+      setupEventListeners();
+      
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 500);
+      
+      animate();
+    }
+
+    function setupLights() {
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+      scene.add(ambientLight);
+      
+      const mainLight = new THREE.DirectionalLight(0xffffff, 1);
+      mainLight.position.set(5, 10, 5);
+      mainLight.castShadow = true;
+      mainLight.shadow.mapSize.width = 2048;
+      mainLight.shadow.mapSize.height = 2048;
+      mainLight.shadow.camera.near = 0.5;
+      mainLight.shadow.camera.far = 50;
+      mainLight.shadow.camera.left = -10;
+      mainLight.shadow.camera.right = 10;
+      mainLight.shadow.camera.top = 10;
+      mainLight.shadow.camera.bottom = -10;
+      scene.add(mainLight);
+      
+      const fillLight = new THREE.DirectionalLight(0x6366f1, 0.3);
+      fillLight.position.set(-5, 5, -5);
+      scene.add(fillLight);
+      
+      const rimLight = new THREE.DirectionalLight(0xf97316, 0.2);
+      rimLight.position.set(0, 5, -10);
+      scene.add(rimLight);
+    }
+
+    function createGround() {
+      const groundGeometry = new THREE.PlaneGeometry(20, 20);
+      const groundMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1e293b,
+        roughness: 0.8,
+        metalness: 0.2
+      });
+      const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+      ground.rotation.x = -Math.PI / 2;
+      ground.position.y = -0.01;
+      ground.receiveShadow = true;
+      scene.add(ground);
+      
+      const gridHelper = new THREE.GridHelper(20, 40, 0x334155, 0x1e293b);
+      gridHelper.position.y = 0.01;
+      scene.add(gridHelper);
+    }
+
+    function createMaterial(name, color, options = {}) {
+      materials[name] = new THREE.MeshStandardMaterial({
+        color: color,
+        roughness: options.roughness || 0.4,
+        metalness: options.metalness || 0.3,
+        ...options
+      });
+      return materials[name];
+    }
+
+    function createAGVModel(agv) {
+      const group = new THREE.Group();
+      group.userData = { agvId: agv.id };
+      
+      const statusConfig = AGV_STATUS_CONFIG[agv.status];
+      
+      const chassis = createChassis(statusConfig);
+      chassis.position.y = 0.05;
+      group.add(chassis);
+      
+      const head = createHead(statusConfig);
+      head.position.set(0, 0.20, 0.77);
+      group.add(head);
+      
+      const lidar = createLidar(statusConfig);
+      lidar.position.set(0, 0.27, 0.65);
+      group.add(lidar);
+      
+      const pallet = createPallet();
+      pallet.position.set(0, 0.33, -0.1);
+      group.add(pallet);
+      
+      const wheels = createWheels();
+      group.add(wheels);
+      
+      const chargingModule = createChargingModule(statusConfig);
+      chargingModule.position.set(0, 0.2, -0.77);
+      group.add(chargingModule);
+      
+      group.position.set(agv.x, 0, agv.z);
+      group.rotation.y = agv.rotation;
+      
+      scene.add(group);
+      agvModels.set(agv.id, group);
+      
+      if (agv.path && agv.path.length > 0) {
+        const pathLine = createPathLine(agv);
+        pathLines.set(agv.id, pathLine);
+        scene.add(pathLine);
+        pathLine.visible = showPath && selectedAGVId === agv.id;
+      }
+    }
+
+    function createChassis(statusConfig) {
+      const group = new THREE.Group();
+      
+      const shape = new THREE.Shape();
+      const width = 1.0;
+      const depth = 1.5;
+      const chamfer = 0.2;
+      
+      shape.moveTo(-width/2 + chamfer, -depth/2);
+      shape.lineTo(width/2 - chamfer, -depth/2);
+      shape.lineTo(width/2, -depth/2 + chamfer);
+      shape.lineTo(width/2, depth/2 - chamfer);
+      shape.lineTo(width/2 - chamfer, depth/2);
+      shape.lineTo(-width/2 + chamfer, depth/2);
+      shape.lineTo(-width/2, depth/2 - chamfer);
+      shape.lineTo(-width/2, -depth/2 + chamfer);
+      shape.closePath();
+      
+      const extrudeSettings = {
+        depth: 0.2,
+        bevelEnabled: true,
+        bevelThickness: 0.02,
+        bevelSize: 0.02,
+        bevelSegments: 3
+      };
+      
+      const mainBodyGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+      mainBodyGeo.rotateX(-Math.PI / 2);
+      const mainBody = new THREE.Mesh(
+        mainBodyGeo,
+        createMaterial('chassis_' + statusConfig.label, statusConfig.color, { 
+          roughness: 0.6, 
+          metalness: 0.4 
+        })
+      );
+      mainBody.position.y = 0;
+      mainBody.castShadow = true;
+      mainBody.receiveShadow = true;
+      group.add(mainBody);
+      
+      return group;
+    }
+
+    function createHead(statusConfig) {
+      const group = new THREE.Group();
+      
+      const displayGeo = new THREE.BoxGeometry(0.4, 0.06, 0.02);
+      const displayMat = new THREE.MeshStandardMaterial({
+        color: 0x1e293b,
+        emissive: statusConfig.emissive,
+        emissiveIntensity: 0.5
+      });
+      const display = new THREE.Mesh(displayGeo, displayMat);
+      group.add(display);
+      
+      for (let i = 0; i < 3; i++) {
+        const statusLight = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.02, 0.02, 0.015, 16),
+          new THREE.MeshStandardMaterial({
+            color: statusConfig.color,
+            emissive: statusConfig.emissive,
+            emissiveIntensity: 1
+          })
+        );
+        statusLight.rotation.x = Math.PI / 2;
+        statusLight.position.set(-0.15 + i * 0.15, 0, 0.01);
+        group.add(statusLight);
+      }
+      
+      return group;
+    }
+
+    function createLidar(statusConfig) {
+      const group = new THREE.Group();
+      
+      const lidarMat = new THREE.MeshStandardMaterial({
+        color: 0x1e293b,
+        metalness: 0.7,
+        roughness: 0.3
+      });
+      
+      const lidarHousing = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.06, 0.08, 0.05, 32),
+        lidarMat
+      );
+      group.add(lidarHousing);
+      
+      const lidarTop = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.05, 0.06, 0.03, 32),
+        lidarMat
+      );
+      lidarTop.position.y = 0.04;
+      group.add(lidarTop);
+      
+      const lidarSensor = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.04, 0.04, 0.015, 32),
+        new THREE.MeshStandardMaterial({
+          color: statusConfig.color,
+          emissive: statusConfig.emissive,
+          emissiveIntensity: 0.8
+        })
+      );
+      lidarSensor.position.y = 0.06;
+      group.add(lidarSensor);
+      
+      return group;
+    }
+
+    function createPallet() {
+      const group = new THREE.Group();
+      
+      const platformGeo = new RoundedBoxGeometry(0.8, 0.05, 1.0, 4, 0.02);
+      const platform = new THREE.Mesh(
+        platformGeo,
+        createMaterial('pallet', 0x64748b, { roughness: 0.7, metalness: 0.2 })
+      );
+      platform.castShadow = true;
+      platform.receiveShadow = true;
+      group.add(platform);
+      
+      const liftMechanismGeo = new THREE.CylinderGeometry(0.06, 0.06, 0.12, 16);
+      const liftMechanismMat = createMaterial('lift', 0x334155, { metalness: 0.6 });
+      
+      const positions = [
+        [-0.28, -0.06, 0.25],
+        [0.28, -0.06, 0.25],
+        [-0.28, -0.06, -0.35],
+        [0.28, -0.06, -0.35]
+      ];
+      
+      positions.forEach(pos => {
+        const lift = new THREE.Mesh(liftMechanismGeo, liftMechanismMat);
+        lift.position.set(pos[0], pos[1], pos[2]);
+        lift.castShadow = true;
+        group.add(lift);
+      });
+      
+      return group;
+    }
+
+    function createWheels() {
+      const group = new THREE.Group();
+      
+      const wheelRadius = 0.1;
+      const wheelWidth = 0.08;
+      const wheelGeo = new THREE.CylinderGeometry(wheelRadius, wheelRadius, wheelWidth, 32);
+      const wheelMat = createMaterial('wheel', 0x1e293b, { roughness: 0.8, metalness: 0.1 });
+      
+      const treadGeo = new THREE.TorusGeometry(wheelRadius, 0.02, 8, 32);
+      const treadMat = createMaterial('tread', 0x0f172a);
+      
+      const wheelPositions = [
+        { x: -0.4, z: 0.45 },
+        { x: 0.4, z: 0.45 },
+        { x: -0.4, z: -0.45 },
+        { x: 0.4, z: -0.45 }
+      ];
+      
+      wheelPositions.forEach(pos => {
+        const wheelGroup = new THREE.Group();
+        
+        const wheel = new THREE.Mesh(wheelGeo, wheelMat);
+        wheel.rotation.z = Math.PI / 2;
+        wheel.castShadow = true;
+        wheelGroup.add(wheel);
+        
+        const tread = new THREE.Mesh(treadGeo, treadMat);
+        tread.rotation.y = Math.PI / 2;
+        wheelGroup.add(tread);
+        
+        wheelGroup.position.set(pos.x, wheelRadius - 0.05, pos.z);
+        group.add(wheelGroup);
+      });
+      
+      return group;
+    }
+
+    function createChargingModule(statusConfig) {
+      const group = new THREE.Group();
+      
+      const barGeo = new THREE.BoxGeometry(0.3, 0.04, 0.015);
+      
+      const isCharging = statusConfig.label === '充电中';
+      const chargingMat = new THREE.MeshStandardMaterial({
+        color: isCharging ? 0xeab308 : 0x475569,
+        emissive: isCharging ? 0xeab308 : 0x000000,
+        emissiveIntensity: isCharging ? 0.8 : 0
+      });
+      
+      const topBar = new THREE.Mesh(barGeo, chargingMat);
+      group.add(topBar);
+      
+      const bottomBar = new THREE.Mesh(barGeo, chargingMat);
+      bottomBar.position.y = -0.06;
+      group.add(bottomBar);
+      
+      return group;
+    }
+
+    function createPathLine(agv) {
+      const points = [new THREE.Vector3(agv.x, 0.05, agv.z)];
+      
+      if (agv.path) {
+        agv.path.forEach(point => {
+          points.push(new THREE.Vector3(point.x, 0.05, point.z));
+        });
+      }
+      
+      const geometry = new THREE.BufferGeometry().setFromPoints(points);
+      const material = new THREE.LineBasicMaterial({
+        color: 0xf97316,
+        linewidth: 2,
+        transparent: true,
+        opacity: 0.6
+      });
+      
+      return new THREE.Line(geometry, material);
+    }
+
+    function renderAGVList() {
+      const listContainer = document.getElementById('agv-list');
+      listContainer.innerHTML = '';
+      
+      const filteredAGVs = currentFilter === 'all' 
+        ? agvData 
+        : agvData.filter(agv => agv.status === currentFilter);
+      
+      filteredAGVs.forEach(agv => {
+        const item = document.createElement('div');
+        item.className = `agv-item ${selectedAGVId === agv.id ? 'selected' : ''}`;
+        item.dataset.agvId = agv.id;
+        
+        const batteryClass = agv.battery < 30 ? 'low' : agv.battery < 60 ? 'medium' : 'high';
+        
+        item.innerHTML = `
+          <div class="status-indicator ${agv.status}"></div>
+          <div class="agv-info">
+            <div class="agv-id">${agv.id}</div>
+            <div class="agv-status">${AGV_STATUS_CONFIG[agv.status].label}</div>
+          </div>
+          <div class="agv-battery ${batteryClass}">${agv.battery}%</div>
+        `;
+        
+        item.addEventListener('click', () => selectAGV(agv.id));
+        listContainer.appendChild(item);
+      });
+    }
+
+    function selectAGV(agvId) {
+      selectedAGVId = agvId;
+      
+      renderAGVList();
+      updateStatsPanel();
+      updatePathVisibility();
+      focusOnAGV(agvId);
+    }
+
+    function updateStatsPanel() {
+      const panel = document.getElementById('stats-panel');
+      
+      if (!selectedAGVId) {
+        panel.innerHTML = `
+          <div class="no-selection">
+            <div class="no-selection-icon">🚗</div>
+            <div>请选择一个 AGV</div>
+            <div style="font-size: 12px; margin-top: 4px;">查看详细信息</div>
+          </div>
+        `;
+        return;
+      }
+      
+      const agv = agvData.find(a => a.id === selectedAGVId);
+      if (!agv) return;
+      
+      const statusConfig = AGV_STATUS_CONFIG[agv.status];
+      const batteryClass = agv.battery < 30 ? 'low' : agv.battery < 60 ? 'medium' : 'high';
+      
+      panel.innerHTML = `
+        <div class="stats-header">
+          <span class="stats-title">${agv.id}</span>
+          <span class="stats-badge ${agv.status}">${statusConfig.label}</span>
+        </div>
+        
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-label">电池电量</div>
+            <div class="stat-value">${agv.battery}%</div>
+            <div class="battery-bar">
+              <div class="battery-fill ${batteryClass}" style="width: ${agv.battery}%"></div>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-label">当前速度</div>
+            <div class="stat-value">${agv.speed.toFixed(2)} m/s</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-label">当前位置</div>
+            <div class="stat-value small">X: ${agv.x.toFixed(2)}</div>
+            <div class="stat-value small">Z: ${agv.z.toFixed(2)}</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-label">目标位置</div>
+            <div class="stat-value small">X: ${(agv.targetX || 0).toFixed(2)}</div>
+            <div class="stat-value small">Z: ${(agv.targetZ || 0).toFixed(2)}</div>
+          </div>
+        </div>
+        
+        <div class="path-toggle ${showPath ? 'active' : ''}" id="path-toggle">
+          <div class="toggle-switch"></div>
+          <span class="toggle-label">显示路径</span>
+        </div>
+      `;
+      
+      document.getElementById('path-toggle').addEventListener('click', togglePath);
+    }
+
+    function togglePath() {
+      showPath = !showPath;
+      updateStatsPanel();
+      updatePathVisibility();
+    }
+
+    function updatePathVisibility() {
+      pathLines.forEach((line, agvId) => {
+        line.visible = showPath && selectedAGVId === agvId;
+      });
+    }
+
+    function focusOnAGV(agvId) {
+      const model = agvModels.get(agvId);
+      if (!model) return;
+      
+      const targetPosition = new THREE.Vector3();
+      model.getWorldPosition(targetPosition);
+      
+      controls.target.copy(targetPosition);
+      controls.target.y = 0.3;
+    }
+
+    function highlightSelectedAGV() {
+      agvModels.forEach((model, agvId) => {
+        model.traverse(child => {
+          if (child.isMesh && child.material) {
+            if (agvId === selectedAGVId) {
+              child.material.emissive = new THREE.Color(0xf97316);
+              child.material.emissiveIntensity = 0.3;
+            } else {
+              if (child.material.emissive) {
+                child.material.emissiveIntensity = child.material.userData.originalEmissive || 0;
+              }
+            }
+          }
+        });
+      });
+    }
+
+    function addAGV() {
+      const newAGVs = generateAGVData(1);
+      newAGVs.forEach(agv => {
+        agvData.push(agv);
+        createAGVModel(agv);
+      });
+      renderAGVList();
+    }
+
+    function removeAGV() {
+      if (agvData.length === 0) return;
+      
+      const agvToRemove = selectedAGVId || agvData[agvData.length - 1].id;
+      
+      const model = agvModels.get(agvToRemove);
+      if (model) {
+        scene.remove(model);
+        agvModels.delete(agvToRemove);
+      }
+      
+      const pathLine = pathLines.get(agvToRemove);
+      if (pathLine) {
+        scene.remove(pathLine);
+        pathLines.delete(agvToRemove);
+      }
+      
+      agvData = agvData.filter(agv => agv.id !== agvToRemove);
+      
+      if (selectedAGVId === agvToRemove) {
+        selectedAGVId = null;
+        updateStatsPanel();
+      }
+      
+      renderAGVList();
+    }
+
+    function randomizeStatus() {
+      const statuses = ['running', 'idle', 'error', 'charging'];
+      
+      agvData.forEach(agv => {
+        agv.status = statuses[Math.floor(Math.random() * statuses.length)];
+        agv.battery = Math.floor(Math.random() * 60) + 40;
+        agv.speed = Math.random() * 1.5 + 0.5;
+        
+        updateAGVModelStatus(agv);
+      });
+      
+      renderAGVList();
+      updateStatsPanel();
+    }
+
+    function updateAGVModelStatus(agv) {
+      const model = agvModels.get(agv.id);
+      if (!model) return;
+      
+      const statusConfig = AGV_STATUS_CONFIG[agv.status];
+      
+      model.traverse(child => {
+        if (child.isMesh && child.material) {
+          if (child.material.emissive && child.material.color) {
+            const currentColor = child.material.color.getHex();
+            if (Object.values(AGV_STATUS_CONFIG).some(c => c.color === currentColor)) {
+              child.material.color.setHex(statusConfig.color);
+              child.material.emissive.setHex(statusConfig.emissive);
+            }
+          }
+        }
+      });
+    }
+
+    function setupEventListeners() {
+      window.addEventListener('resize', onWindowResize);
+      
+      document.getElementById('btn-rotate').addEventListener('click', function() {
+        autoRotate = !autoRotate;
+        this.classList.toggle('active', autoRotate);
+      });
+      
+      document.getElementById('btn-wireframe').addEventListener('click', function() {
+        wireframeMode = !wireframeMode;
+        this.classList.toggle('active', wireframeMode);
+        Object.values(materials).forEach(mat => {
+          mat.wireframe = wireframeMode;
+        });
+      });
+      
+      document.getElementById('btn-explode').addEventListener('click', function() {
+        explodeMode = !explodeMode;
+        this.classList.toggle('active', explodeMode);
+      });
+      
+      document.getElementById('btn-reset').addEventListener('click', function() {
+        camera.position.set(6, 5, 6);
+        controls.target.set(0, 0, 0);
+        controls.update();
+        selectedAGVId = null;
+        renderAGVList();
+        updateStatsPanel();
+        updatePathVisibility();
+      });
+      
+      document.getElementById('btn-pallet-down').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('btn-pallet-up').classList.remove('active');
+      });
+      
+      document.getElementById('btn-pallet-up').addEventListener('click', function() {
+        this.classList.add('active');
+        document.getElementById('btn-pallet-down').classList.remove('active');
+      });
+      
+      document.getElementById('btn-add-agv').addEventListener('click', addAGV);
+      document.getElementById('btn-remove-agv').addEventListener('click', removeAGV);
+      document.getElementById('btn-random-status').addEventListener('click', randomizeStatus);
+      
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.dataset.filter;
+          renderAGVList();
+        });
+      });
+      
+      renderer.domElement.addEventListener('click', onCanvasClick);
+    }
+
+    function onCanvasClick(event) {
+      const rect = renderer.domElement.getBoundingClientRect();
+      const mouse = new THREE.Vector2(
+        ((event.clientX - rect.left) / rect.width) * 2 - 1,
+        -((event.clientY - rect.top) / rect.height) * 2 + 1
+      );
+      
+      const raycaster = new THREE.Raycaster();
+      raycaster.setFromCamera(mouse, camera);
+      
+      const intersects = raycaster.intersectObjects(scene.children, true);
+      
+      for (const intersect of intersects) {
+        let obj = intersect.object;
+        while (obj.parent && !obj.userData.agvId) {
+          obj = obj.parent;
+        }
+        
+        if (obj.userData.agvId) {
+          selectAGV(obj.userData.agvId);
+          return;
+        }
+      }
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      
+      if (autoRotate) {
+        agvModels.forEach((model, agvId) => {
+          if (agvId !== selectedAGVId) {
+            model.rotation.y += 0.002;
+          }
+        });
+      }
+      
+      const time = Date.now() * 0.001;
+      
+      agvData.forEach(agv => {
+        if (agv.status === 'charging') {
+          const model = agvModels.get(agv.id);
+          if (model) {
+            model.traverse(child => {
+              if (child.isMesh && child.material && child.material.emissive) {
+                child.material.emissiveIntensity = 0.5 + Math.sin(time * 3) * 0.3;
+              }
+            });
+          }
+        }
+        
+        if (agv.status === 'error') {
+          const model = agvModels.get(agv.id);
+          if (model) {
+            model.traverse(child => {
+              if (child.isMesh && child.material && child.material.emissive) {
+                child.material.emissiveIntensity = 0.3 + Math.sin(time * 5) * 0.5;
+              }
+            });
+          }
+        }
+      });
+      
+      highlightSelectedAGV();
+      
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    init();
+  </script>
+</body>
+</html>

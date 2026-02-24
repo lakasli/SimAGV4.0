@@ -1,0 +1,446 @@
+{
+  "header": {
+    "mapType": "2D-Map",
+    "mapName": "beidaceshi-0205",
+    "minPos": {
+      "x": -12.015,
+      "y": -10.353
+    },
+    "maxPos": {
+      "x": -3.423,
+      "y": -2.116
+    },
+    "resolution": 0.02,
+    "version": "1.0.6"
+  },
+  "advancedPointList": [
+    {
+      "className": "ActionPoint",
+      "instanceName": "AP2",
+      "pos": {
+        "x": -8.113,
+        "y": -9.17
+      },
+      "dir": null,
+      "ignoreDir": true,
+      "property": []
+    },
+    {
+      "className": "ActionPoint",
+      "instanceName": "AP1",
+      "pos": {
+        "x": -10.563,
+        "y": -7.393
+      },
+      "dir": null,
+      "ignoreDir": true,
+      "property": []
+    },
+    {
+      "className": "ParkPoint",
+      "instanceName": "PP1",
+      "pos": {
+        "x": -12.015,
+        "y": -6.268
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "ActionPoint",
+      "instanceName": "AP4",
+      "pos": {
+        "x": -4.489,
+        "y": -8.897
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "ActionPoint",
+      "instanceName": "AP5",
+      "pos": {
+        "x": -4.802,
+        "y": -5.311
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "ChargePoint",
+      "instanceName": "CP1",
+      "pos": {
+        "x": -6.355,
+        "y": -10.353
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "ParkPoint",
+      "instanceName": "PP2",
+      "pos": {
+        "x": -3.423,
+        "y": -2.116
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "LocationMark",
+      "instanceName": "LM1",
+      "pos": {
+        "x": -5.867,
+        "y": -4.555
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    },
+    {
+      "className": "LocationMark",
+      "instanceName": "LM2",
+      "pos": {
+        "x": -8.238,
+        "y": -6.103
+      },
+      "dir": null,
+      "ignoreDir": false,
+      "property": []
+    }
+  ],
+  "advancedCurveList": [
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP2-AP4",
+      "startPos": {
+        "instanceName": "AP2",
+        "pos": {
+          "x": -8.113,
+          "y": -9.17
+        }
+      },
+      "endPos": {
+        "instanceName": "AP4",
+        "pos": {
+          "x": -4.489,
+          "y": -8.897
+        }
+      },
+      "controlPos1": {
+        "x": -6.717,
+        "y": -10.101
+      },
+      "controlPos2": {
+        "x": -4.973,
+        "y": -9.73
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP4-AP5",
+      "startPos": {
+        "instanceName": "AP4",
+        "pos": {
+          "x": -4.489,
+          "y": -8.897
+        }
+      },
+      "endPos": {
+        "instanceName": "AP5",
+        "pos": {
+          "x": -4.802,
+          "y": -5.311
+        }
+      },
+      "controlPos1": {
+        "x": -3.62,
+        "y": -7.742
+      },
+      "controlPos2": {
+        "x": -4.421,
+        "y": -6.427
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "PP1-AP1",
+      "startPos": {
+        "instanceName": "PP1",
+        "pos": {
+          "x": -12.015,
+          "y": -6.268
+        }
+      },
+      "endPos": {
+        "instanceName": "AP1",
+        "pos": {
+          "x": -10.563,
+          "y": -7.393
+        }
+      },
+      "controlPos1": {
+        "x": -11.53584,
+        "y": -6.63925
+      },
+      "controlPos2": {
+        "x": -11.042159999999999,
+        "y": -7.02175
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP1-PP1",
+      "startPos": {
+        "instanceName": "AP1",
+        "pos": {
+          "x": -10.563,
+          "y": -7.393
+        }
+      },
+      "endPos": {
+        "instanceName": "PP1",
+        "pos": {
+          "x": -12.015,
+          "y": -6.268
+        }
+      },
+      "controlPos1": {
+        "x": -11.042159999999999,
+        "y": -7.02175
+      },
+      "controlPos2": {
+        "x": -11.53584,
+        "y": -6.63925
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP1-AP2",
+      "startPos": {
+        "instanceName": "AP1",
+        "pos": {
+          "x": -10.563,
+          "y": -7.393
+        }
+      },
+      "endPos": {
+        "instanceName": "AP2",
+        "pos": {
+          "x": -8.113,
+          "y": -9.17
+        }
+      },
+      "controlPos1": {
+        "x": -9.7545,
+        "y": -7.97941
+      },
+      "controlPos2": {
+        "x": -8.9215,
+        "y": -8.583590000000001
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP2-AP1",
+      "startPos": {
+        "instanceName": "AP2",
+        "pos": {
+          "x": -8.113,
+          "y": -9.17
+        }
+      },
+      "endPos": {
+        "instanceName": "AP1",
+        "pos": {
+          "x": -10.563,
+          "y": -7.393
+        }
+      },
+      "controlPos1": {
+        "x": -8.9215,
+        "y": -8.583590000000001
+      },
+      "controlPos2": {
+        "x": -9.7545,
+        "y": -7.97941
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP2-CP1",
+      "startPos": {
+        "instanceName": "AP2",
+        "pos": {
+          "x": -8.113,
+          "y": -9.17
+        }
+      },
+      "endPos": {
+        "instanceName": "CP1",
+        "pos": {
+          "x": -6.355,
+          "y": -10.353
+        }
+      },
+      "controlPos1": {
+        "x": -7.5328599999999994,
+        "y": -9.56039
+      },
+      "controlPos2": {
+        "x": -6.9351400000000005,
+        "y": -9.96261
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "CP1-AP2",
+      "startPos": {
+        "instanceName": "CP1",
+        "pos": {
+          "x": -6.355,
+          "y": -10.353
+        }
+      },
+      "endPos": {
+        "instanceName": "AP2",
+        "pos": {
+          "x": -8.113,
+          "y": -9.17
+        }
+      },
+      "controlPos1": {
+        "x": -6.9351400000000005,
+        "y": -9.96261
+      },
+      "controlPos2": {
+        "x": -7.5328599999999994,
+        "y": -9.56039
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "AP5-PP2",
+      "startPos": {
+        "instanceName": "AP5",
+        "pos": {
+          "x": -4.802,
+          "y": -5.311
+        }
+      },
+      "endPos": {
+        "instanceName": "PP2",
+        "pos": {
+          "x": -3.423,
+          "y": -2.116
+        }
+      },
+      "controlPos1": {
+        "x": -5.239,
+        "y": -4.401
+      },
+      "controlPos2": {
+        "x": -4.221,
+        "y": -2.904
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "PP2-LM1",
+      "startPos": {
+        "instanceName": "PP2",
+        "pos": {
+          "x": -3.423,
+          "y": -2.116
+        }
+      },
+      "endPos": {
+        "instanceName": "LM1",
+        "pos": {
+          "x": -5.867,
+          "y": -4.555
+        }
+      },
+      "controlPos1": {
+        "x": -4.229520000000001,
+        "y": -2.9208700000000003
+      },
+      "controlPos2": {
+        "x": -5.060479999999999,
+        "y": -3.7501299999999995
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "LM1-LM2",
+      "startPos": {
+        "instanceName": "LM1",
+        "pos": {
+          "x": -5.867,
+          "y": -4.555
+        }
+      },
+      "endPos": {
+        "instanceName": "LM2",
+        "pos": {
+          "x": -8.238,
+          "y": -6.103
+        }
+      },
+      "controlPos1": {
+        "x": -6.649430000000001,
+        "y": -5.065840000000001
+      },
+      "controlPos2": {
+        "x": -6.754,
+        "y": -6.474
+      },
+      "property": []
+    },
+    {
+      "className": "DegenerateBezier",
+      "instanceName": "LM2-PP1",
+      "startPos": {
+        "instanceName": "LM2",
+        "pos": {
+          "x": -8.238,
+          "y": -6.103
+        }
+      },
+      "endPos": {
+        "instanceName": "PP1",
+        "pos": {
+          "x": -12.015,
+          "y": -6.268
+        }
+      },
+      "controlPos1": {
+        "x": -9.577,
+        "y": -4.458
+      },
+      "controlPos2": {
+        "x": -11.415,
+        "y": -5.087
+      },
+      "property": []
+    }
+  ],
+  "advancedAreaList": [],
+  "tagPosList": [],
+  "binLocationsList": []
+}

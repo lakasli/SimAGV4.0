@@ -1,0 +1,656 @@
+[{
+    "scale": 0.66,
+    "origin": {
+        "x": 0,
+        "y": 0
+    },
+    "robotGroups": [],
+    "robotLabels": [],
+    "robots": [],
+    "points": [
+        {
+            "id": "14000002",
+            "name": "AP2",
+            "x": -8.113,
+            "y": -9.17,
+            "type": 15,
+            "config": {},
+            "properties": [],
+            "associatedStorageLocations": [
+                "Ac933442_AP2_1"
+            ]
+        },
+        {
+            "id": "14000001",
+            "name": "AP1",
+            "x": -10.563,
+            "y": -7.394,
+            "type": 15,
+            "config": {},
+            "properties": [],
+            "associatedStorageLocations": [
+                "A8fa8c61_AP1_1"
+            ]
+        },
+        {
+            "id": "11000001",
+            "name": "PP1",
+            "x": -12.015,
+            "y": -6.269,
+            "type": 14,
+            "config": {},
+            "properties": [],
+            "robots": [],
+            "enabled": 1
+        },
+        {
+            "id": "14000004",
+            "name": "AP4",
+            "x": -4.489,
+            "y": -8.897,
+            "type": 15,
+            "config": {},
+            "properties": [],
+            "associatedStorageLocations": [
+                "Ac6b740_AP4_1"
+            ]
+        },
+        {
+            "id": "14000005",
+            "name": "AP5",
+            "x": -4.802,
+            "y": -5.312,
+            "type": 15,
+            "config": {},
+            "properties": [],
+            "associatedStorageLocations": [
+                "A151c1a3c_AP5_1"
+            ]
+        },
+        {
+            "id": "17000001",
+            "name": "CP1",
+            "x": -6.355,
+            "y": -10.353,
+            "type": 13,
+            "config": {},
+            "properties": [],
+            "robots": [],
+            "enabled": 1
+        },
+        {
+            "id": "11000002",
+            "name": "PP2",
+            "x": -3.423,
+            "y": -2.117,
+            "type": 14,
+            "config": {},
+            "properties": [],
+            "robots": [],
+            "enabled": 1
+        },
+        {
+            "id": "10000001",
+            "name": "LM1",
+            "x": -5.868,
+            "y": -4.556,
+            "type": 1,
+            "config": {},
+            "properties": []
+        },
+        {
+            "id": "10000002",
+            "name": "LM2",
+            "x": -8.239,
+            "y": -6.103,
+            "type": 1,
+            "config": {},
+            "properties": []
+        }
+    ],
+    "routes": [
+        {
+            "id": "1000000211000001",
+            "desc": "LM2-PP1",
+            "from": "10000002",
+            "to": "11000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -9.578,
+                "y": -4.459
+            },
+            "c2": {
+                "x": -11.415,
+                "y": -5.087
+            }
+        },
+        {
+            "id": "1000000110000002",
+            "desc": "LM1-LM2",
+            "from": "10000001",
+            "to": "10000002",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -6.65,
+                "y": -5.066
+            },
+            "c2": {
+                "x": -6.755,
+                "y": -6.475
+            }
+        },
+        {
+            "id": "1100000210000001",
+            "desc": "PP2-LM1",
+            "from": "11000002",
+            "to": "10000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -4.23,
+                "y": -2.921
+            },
+            "c2": {
+                "x": -5.061,
+                "y": -3.751
+            }
+        },
+        {
+            "id": "1400000511000002",
+            "desc": "AP5-PP2",
+            "from": "14000005",
+            "to": "11000002",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -5.239,
+                "y": -4.402
+            },
+            "c2": {
+                "x": -4.221,
+                "y": -2.904
+            }
+        },
+        {
+            "id": "1700000114000002",
+            "desc": "CP1-AP2",
+            "from": "17000001",
+            "to": "14000002",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -6.936,
+                "y": -9.963
+            },
+            "c2": {
+                "x": -7.533,
+                "y": -9.561
+            }
+        },
+        {
+            "id": "1400000217000001",
+            "desc": "AP2-CP1",
+            "from": "14000002",
+            "to": "17000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -7.533,
+                "y": -9.561
+            },
+            "c2": {
+                "x": -6.936,
+                "y": -9.963
+            }
+        },
+        {
+            "id": "1400000214000001",
+            "desc": "AP2-AP1",
+            "from": "14000002",
+            "to": "14000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -8.922,
+                "y": -8.584
+            },
+            "c2": {
+                "x": -9.755,
+                "y": -7.98
+            }
+        },
+        {
+            "id": "1400000114000002",
+            "desc": "AP1-AP2",
+            "from": "14000001",
+            "to": "14000002",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -9.755,
+                "y": -7.98
+            },
+            "c2": {
+                "x": -8.922,
+                "y": -8.584
+            }
+        },
+        {
+            "id": "1400000111000001",
+            "desc": "AP1-PP1",
+            "from": "14000001",
+            "to": "11000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -11.043,
+                "y": -7.022
+            },
+            "c2": {
+                "x": -11.536,
+                "y": -6.64
+            }
+        },
+        {
+            "id": "1100000114000001",
+            "desc": "PP1-AP1",
+            "from": "11000001",
+            "to": "14000001",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -11.536,
+                "y": -6.64
+            },
+            "c2": {
+                "x": -11.043,
+                "y": -7.022
+            }
+        },
+        {
+            "id": "1400000414000005",
+            "desc": "AP4-AP5",
+            "from": "14000004",
+            "to": "14000005",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -3.62,
+                "y": -7.742
+            },
+            "c2": {
+                "x": -4.421,
+                "y": -6.428
+            }
+        },
+        {
+            "id": "1400000214000004",
+            "desc": "AP2-AP4",
+            "from": "14000002",
+            "to": "14000004",
+            "type": "bezier3",
+            "pass": 0,
+            "config": {},
+            "properties": [],
+            "deviceId": "",
+            "c1": {
+                "x": -6.717,
+                "y": -10.101
+            },
+            "c2": {
+                "x": -4.973,
+                "y": -9.73
+            }
+        }
+    ],
+    "areas": [
+        {
+            "id": "151c1a3c",
+            "name": "A151c1a3c",
+            "x": -5.233,
+            "y": -4.756,
+            "w": 1.487,
+            "h": 1.153,
+            "type": 1,
+            "config": {},
+            "routes": [],
+            "doorDeviceId": "",
+            "points": [
+                "AP5"
+            ],
+            "storageLocations": [
+                {
+                    "AP5": [
+                        "A151c1a3c_AP5_1"
+                    ]
+                }
+            ],
+            "inoutflag": 2
+        },
+        {
+            "id": "c6b740",
+            "name": "Ac6b740",
+            "x": -4.976,
+            "y": -8.038,
+            "w": 0.974,
+            "h": 1.307,
+            "type": 1,
+            "config": {},
+            "routes": [],
+            "doorDeviceId": "",
+            "points": [
+                "AP4"
+            ],
+            "storageLocations": [
+                {
+                    "AP4": [
+                        "Ac6b740_AP4_1"
+                    ]
+                }
+            ],
+            "inoutflag": 2
+        },
+        {
+            "id": "c933442",
+            "name": "Ac933442",
+            "x": -8.566,
+            "y": -8.166,
+            "w": 1.025,
+            "h": 1.717,
+            "type": 1,
+            "config": {},
+            "routes": [],
+            "doorDeviceId": "",
+            "points": [
+                "AP2"
+            ],
+            "storageLocations": [
+                {
+                    "AP2": [
+                        "Ac933442_AP2_1"
+                    ]
+                }
+            ],
+            "inoutflag": 2
+        },
+        {
+            "id": "8fa8c61",
+            "name": "A8fa8c61",
+            "x": -10.925,
+            "y": -6.371,
+            "w": 0.871,
+            "h": 1.769,
+            "type": 1,
+            "config": {},
+            "routes": [],
+            "doorDeviceId": "",
+            "points": [
+                "AP1"
+            ],
+            "storageLocations": [
+                {
+                    "AP1": [
+                        "A8fa8c61_AP1_1"
+                    ]
+                }
+            ],
+            "inoutflag": 2
+        }
+    ],
+    "blocks": "",
+    "colorConfig": {
+        "point": {
+            "small": {
+                "stroke": "#8C8C8C",
+                "strokeActive": "#EBB214",
+                "fill": {
+                    "1": "#14D1A5",
+                    "2": "#69C6F5",
+                    "3": "#E48B1D",
+                    "4": "#E48B1D",
+                    "5": "#a72b69",
+                    "6": "#E63A3A",
+                    "7": "#db0d66"
+                }
+            },
+            "large": {
+                "stroke": "#595959",
+                "strokeActive": "#EBB214",
+                "strokeOccupied": "#ff4d4f",
+                "strokeUnoccupied": "#52c41a",
+                "strokeEmpty": "#1890ff",
+                "strokeDisabled": "#bfbfbf",
+                "strokeEnabled": "#52c41a",
+                "strokeLocked": "#faad14",
+                "strokeUnlocked": "#52c41a"
+            },
+            "types": {
+                "1": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#14D1A5"
+                },
+                "2": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#69C6F5"
+                },
+                "3": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#E48B1D"
+                },
+                "4": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#E48B1D"
+                },
+                "5": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#a72b69"
+                },
+                "7": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": "#14D1A5"
+                },
+                "11": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                },
+                "12": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                },
+                "13": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                },
+                "14": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                },
+                "15": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                },
+                "16": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214"
+                }
+            }
+        },
+        "route": {
+            "strokeActive": "#EBB214",
+            "strokeNone": "#8C8C8C",
+            "strokeEmpty": "#52C41A",
+            "strokeLoaded": "#1982F3",
+            "strokeForbidden": "#E63A3A",
+            "width": {
+                "normal": 2,
+                "active": 3
+            }
+        },
+        "area": {
+            "strokeActive": "#EBB214",
+            "stroke": {
+                "1": "#9ACDFF99",
+                "11": "#FF535399",
+                "12": "#0DBB8A99",
+                "13": "#e61e4aad",
+                "14": "#FFD70099",
+                "15": "transparent"
+            },
+            "fill": {
+                "1": "#9ACDFF33",
+                "11": "#FF9A9A33",
+                "12": "#0DBB8A33",
+                "13": "#e61e4a33",
+                "14": "#FFD70033",
+                "15": "transparent"
+            },
+            "border": {
+                "width": 1,
+                "opacity": 0.15,
+                "colors": {
+                    "1": "#1890FF",
+                    "11": "#FF4D4F",
+                    "12": "#52C41A",
+                    "13": "#FA8C16",
+                    "14": "#722ED1",
+                    "15": "transparent"
+                }
+            },
+            "types": {
+                "1": {
+                    "stroke": "#9ACDFF99",
+                    "strokeActive": "#EBB214",
+                    "fill": "#9ACDFF33",
+                    "borderColor": "#1890FF",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.15
+                },
+                "11": {
+                    "stroke": "#FF535399",
+                    "strokeActive": "#EBB214",
+                    "fill": "#FF9A9A33",
+                    "borderColor": "#FF4D4F",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.15
+                },
+                "12": {
+                    "stroke": "#0DBB8A99",
+                    "strokeActive": "#EBB214",
+                    "fill": "#0DBB8A33",
+                    "borderColor": "#52C41A",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.15
+                },
+                "13": {
+                    "stroke": "#e61e4aad",
+                    "strokeActive": "#EBB214",
+                    "fill": "#e61e4a33",
+                    "borderColor": "#FA8C16",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.15
+                },
+                "14": {
+                    "stroke": "#FFD70099",
+                    "strokeActive": "#EBB214",
+                    "fill": "#FFD70033",
+                    "borderColor": "#722ED1",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.15
+                },
+                "15": {
+                    "stroke": "transparent",
+                    "strokeActive": "transparent",
+                    "fill": "transparent",
+                    "borderColor": "transparent",
+                    "borderWidth": 1,
+                    "borderOpacity": 0.22
+                }
+            }
+        },
+        "robot": {
+            "stroke": "#01FDAF99",
+            "fill": "#01FAAD33",
+            "line": "#01fdaf",
+            "strokeNormal": "#01FDAF99",
+            "fillNormal": "#01FAAD33",
+            "strokeWarning": "#FF851B99",
+            "fillWarning": "#FF851B33",
+            "strokeFault": "#FF4D4F99",
+            "fillFault": "#FF4D4F33",
+            "imageWidth": 42,
+            "imageHeight": 76,
+            "customImages": {},
+            "useCustomImages": false
+        },
+        "storage": {
+            "occupied": "#ff4d4f",
+            "available": "#52c41a",
+            "default": "#f5f5f5",
+            "locked": "#faad14",
+            "moreButton": {
+                "background": "#e6f4ff",
+                "border": "#1677ff",
+                "text": "#1677ff"
+            }
+        },
+        "autoDoor": {
+            "strokeClosed": "#FF4D4F99",
+            "fillClosed": "#FF4D4F33",
+            "strokeOpen": "#1890FF99",
+            "fillOpen": "#1890FF33"
+        },
+        "common": {
+            "color": "#595959",
+            "background": "#F0F2F5"
+        }
+    },
+    "id": 1770196947,
+    "setting": "",
+    "ratio": 100,
+    "name": "beidaceshi-0205",
+    "width": 8.592,
+    "height": 8.237,
+    "floors": 1,
+    "binLocationsList": []
+}]

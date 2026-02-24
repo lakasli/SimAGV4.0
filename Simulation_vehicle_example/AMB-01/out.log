@@ -1,0 +1,6 @@
+2026-02-24T07:46:21.687Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=129749570119488
+2026-02-24T07:46:21.689Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=129749570119488
+2026-02-24T07:46:21.689Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=129749570119488
+2026-02-24T07:46:22.187Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=126930748593984
+2026-02-24T07:46:22.188Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=126930748593984
+2026-02-24T07:46:22.188Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=126930748593984

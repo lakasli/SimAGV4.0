@@ -1,0 +1,45 @@
+version: 1
+mqtt_broker:
+  host: "127.0.0.1"
+  port: "1883"
+vehicle:
+  vda_interface: "uagv"
+  manufacturer: "SEER"
+  serial_number: "AMB-01"
+  vda_version: "v2"
+  vda_full_version: "2.0.0"
+sim_config:
+  sim_time_scale: 1.0
+  state_frequency: 10
+  visualization_frequency: 10
+  connection_frequency: 1
+  factsheet_frequency: 0
+  max_publish_hz: 30.0
+  action_time: 1.0
+  speed: 2.0
+  map_id: "beidaceshi-0819"
+  radar_fov_deg: 60.0
+  radar_radius_m: 0.5
+  disable_radar_blocked_on_rotation: true
+  disable_radar_blocked_omega_threshold: 0.01
+  safety_scale: 1.0
+  battery_default: 100.0
+  battery_idle_drain_per_min: 1.0
+  battery_move_empty_multiplier: 1.5
+  battery_move_loaded_multiplier: 2.5
+  battery_charge_per_min: 10.0
+  automatic_charging: true
+initial_pose:
+  pose_x: 0.0
+  pose_y: 0.0
+  pose_theta: 0.0
+factsheet:
+  physicalParameters:
+    speedMin: 0.01
+    speedMax: 2.0
+    accelerationMax: 2.0
+    decelerationMax: 2.0
+    heightMin: 0.01
+    heightMax: 0.1
+    width: 0.745
+    length: 1.03

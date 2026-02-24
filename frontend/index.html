@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGV地图查看器</title>
+  <link rel="stylesheet" href="/static/css/index.css?v=202512241158" />
+  <link rel="stylesheet" href="/static/css/agv.css" />
+  <link rel="stylesheet" href="/static/css/door.css" />
+  <link rel="stylesheet" href="/static/css/elevator.css" />
+  <link rel="stylesheet" href="/static/css/light.css" />
+  <link rel="stylesheet" href="/static/css/caller.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div class="title">AGV地图查看器</div>
+    <div class="controls">
+      <div class="status" id="status">准备就绪</div>
+      <select id="viewerMapSelect" class="form-select" style="width:120px;"><option value="">请选择地图</option></select>
+      <button class="btn" onclick="applyViewerMap()">切换地图</button>
+      <select id="floorSelect" class="form-select" style="width:auto;" onchange="switchFloor(this.value)">
+        <option value="">加载中...</option>
+      </select>
+      <button class="btn" onclick="cycleFloor()">切换楼层</button>
+      <button class="btn" onclick="openErrorInjectModal()">错误注入</button>
+      <button class="btn" onclick="openPerfModal()">性能</button>
+      <button class="btn" onclick="openSettingsModal()">设置</button>
+    </div>
+  </div>
+
+  <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">打开</button>
+
+  <div class="sidebar sidebar-width-sync" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">仿真仿真车管理</div>
+    </div>
+    <div class="sidebar-tabs">
+      <button class="tab-button active" onclick="switchTab('list')">仿真车列表</button>
+      <button class="tab-button" onclick="switchTab('equip')">仿真设备列表</button>
+    </div>
+    <div class="sidebar-content">
+      <div class="tab-content active" id="listTab">
+        <div class="robot-list">
+          <div id="robotListContainer" class="list-scroll"></div>
+          <div class="form-group sidebar-footer" style="margin-top:0px;">
+            <button class="btn-primary" onclick="openRegisterModal()">注册仿真车</button>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="equipTab">
+        <div class="robot-list">
+          <div id="equipListContainer" class="list-scroll"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="canvas-container" id="canvasContainer">
+    <canvas id="mapCanvas"></canvas>
+    <div class="loading" id="loading" style="display:none;">正在加载地图数据...</div>
+    <div class="equip-overlay-layer" id="equipOverlayLayer" style="pointer-events:none;"></div>
+    <div class="info-panel">
+      <div id="mapInfoSection">
+        <div id="mapInfoHeader"><strong>地图信息</strong></div>
+        <div id="mapInfoPanel">
+          <div>站点数量: <span id="pointCount">0</span></div>
+          <div>路段数量: <span id="routeCount">0</span></div>
+          <div>缩放: <span id="zoomLevel">100%</span></div>
+          <div>坐标: <span id="mousePos">0, 0</span></div>
+        </div>
+      </div>
+      <div id="routeHeader" style="margin-top:8px; display:none;"><strong>路段详情</strong></div>
+      <div id="routeDetails" style="font-size:12px;color:#bdc3c7;line-height:1.6; display:none;">
+        <div>路段ID: <span id="rtId">-</span></div>
+        <div>名称: <span id="rtDesc">-</span></div>
+        <div>曲线类型: <span id="rtType">-</span></div>
+        <div>路段类型: <span id="rtPass">-</span></div>
+      </div>
+      <div id="stationHeader" style="margin-top:8px; display:none;"><strong>站点详情</strong></div>
+      <div id="stationDetails" style="font-size:12px;color:#bdc3c7;line-height:1.6; display:none;">
+        <div>类型: <span id="stType">-</span></div>
+        <div>ID: <span id="stId">-</span></div>
+        <div>名称: <span id="stName">-</span></div>
+        <div>坐标: <span id="stPos">-</span></div>
+        <div>朝向: <span id="stDir">-</span></div>
+        <div>随动点: <span id="stSpin">-</span></div>
+        <div id="stStorageRow">库位: <span id="stStorage">-</span></div>
+        <div id="stStorageDetailsRow">库位详情:</div>
+        <div id="stStorageDetails" class="bin-cards">-</div>
+      </div>
+    </div>
+    <!-- 仿真车右键菜单 -->
+    <div id="robotContextMenu" style="display:none; position:absolute; z-index:1000; background:#2c3e50; color:#ecf0f1; border:1px solid #34495e; border-radius:4px; box-shadow:0 6px 18px rgba(0,0,0,0.35); min-width:140px;">
+      <!-- 动态填充菜单项 -->
+    </div>
+    <!-- 站点右键菜单 -->
+    <div id="stationContextMenu" style="display:none; position:absolute; z-index:1000; background:#2c3e50; color:#ecf0f1; border:1px solid #34495e; border-radius:4px; box-shadow:0 6px 18px rgba(0,0,0,0.35); min-width:160px;">
+      <!-- 动态填充菜单项 -->
+    </div>
+  </div>
+  
+    <script src="/static/src/services/pathfinding.js?v=20260203"></script>
+    <script src="/static/js/agv-component.js?v=20260203"></script>
+    <script src="/static/js/saveConfig.js?v=20260203"></script>
+    <script src="/static/js/index.js?v=20260205"></script>
+    <script type="text/plain" id="legacy-inline-js" data-disabled="true">
+  
+  </script>
+  <!-- 仿真车注册弹窗 -->
+  <div id="registerModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2085;">
+    <div class="modal-content" style="width:420px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">注册仿真车</div>
+        <button class="modal-close" onclick="closeRegisterModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <div class="robot-form">
+          <div class="form-group"><label class="form-label">仿真车名称</label><input type="text" class="form-input"
+              id="robotName" placeholder=""></div>
+          <div class="form-group"><label class="form-label">仿真车类型</label><select class="form-select" id="robotType">
+              <option value="AGV">AGV</option>
+              <option value="AMR">AMR</option>
+              <option value="Forklift">叉车</option>
+            </select></div>
+          <div class="form-group"><label class="form-label">仿真车IP地址</label><input type="text" class="form-input"
+              id="robotIP" placeholder=""></div>
+          <div class="form-group"><label class="form-label">厂商</label><input type="text" class="form-input"
+              id="robotManufacturer" placeholder="厂商名称" value="SEER"></div>
+          <div class="form-group"><label class="form-label">版本</label><input type="text" class="form-input"
+              id="robotVersion" placeholder="版本号" value="v2"></div>
+          <div class="form-group"><button class="btn-primary" onclick="registerRobot()">注册仿真车</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 性能弹窗 -->
+  <div id="perfModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2090;">
+    <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">性能监测</div>
+        <button class="modal-close" onclick="closePerfModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <div id="perfTabSummary" style="display:block;">
+          <div class="form-group">
+            <label class="form-label">仿真车线程</label>
+            <div class="perf-inline"><span>CPU</span><span id="perfAgvCpu">-</span><span>内存</span><span id="perfAgvMem">-</span></div>
+            <div id="perfAgvList" class="perf-table"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">仿真设备线程</label>
+            <div class="perf-inline"><span>CPU</span><span id="perfEquipCpu">-</span><span>内存</span><span id="perfEquipMem">-</span></div>
+            <div id="perfEquipList" class="perf-table"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 仿真设置弹窗 -->
+  <div id="settingsModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2100;">
+    <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">仿真设置（热加载）</div>
+        <button class="modal-close" onclick="closeSettingsModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body modal-fixed-shell" style="padding:16px;">
+        <div class="modal-scroll-container">
+          <div class="form-group"><label class="form-label">时间缩放</label><input type="number" class="form-input" id="settingsTimeScale" placeholder="如: 1.0" step="0.01"></div>
+          <div class="form-group"><label class="form-label">状态频率 (Hz)</label><input type="number" class="form-input" id="settingsStateFreq" placeholder="如: 10" step="1"></div>
+          <div class="form-group"><label class="form-label">可视化频率 (Hz)</label><input type="number" class="form-input" id="settingsVisFreq" placeholder="如: 1" step="1"></div>
+          <div class="form-group"><label class="form-label">动作时长 (s)</label><input type="number" class="form-input" id="settingsActionTime" placeholder="如: 1.0" step="0.1"></div>
+          <div class="form-group"><label class="form-label">前端轮询间隔 (ms)</label><input type="number" class="form-input" id="settingsFrontendPoll" placeholder="如: 1000" step="10"></div>
+        </div>
+        <div class="modal-fixed-footer">
+          <button class="btn-saveconfig" onclick="saveSimSettings()">保存</button>
+          <button class="btn-cancel-small" onclick="closeSettingsModal()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 错误注入弹窗 -->
+  <div id="errorInjectModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2100;">
+    <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">错误注入</div>
+        <button class="modal-close" onclick="closeErrorInjectModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <div class="form-group">
+          <label class="form-label">错误注入类型</label>
+          <select class="form-select" id="errorInjectType">
+            <option value="collision">碰撞注入</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">目标仿真车</label>
+          <select class="form-select" id="errorInjectRobotSelect" onchange="updateErrorInjectPreview()">
+            <option value="">请选择仿真车</option>
+          </select>
+          <div class="form-hint" style="font-size:12px;color:#bdc3c7;word-break:break-all;margin-top:4px;">提示：将按 1s 间隔依次发送：控制权切换 SERVICE → initPosition 重叠定位（朝向取反） → 控制权切换 AUTOMATIC</div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+          <button class="btn-saveconfig" onclick="submitErrorInjection()">注入</button>
+          <button class="btn-cancel-small" onclick="closeErrorInjectModal()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 配置弹窗（参考 SimulatorViewer 设计，简化样式） -->
+  <div id="configModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2000;">
+    <div class="modal-content" style="width:calc(30vw + 32px); max-width:40vw; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">仿真车高级配置</div>
+        <button class="modal-close" onclick="closeConfigModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div style="padding:16px;">
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+          <button id="configTabBtnBasic" onclick="switchConfigTab('basic')" style="flex:1; padding:8px; border:none; border-radius:4px; background:#34495e; color:#ecf0f1; cursor:pointer;">基本</button>
+          <button id="configTabBtnPhysical" onclick="switchConfigTab('physical')" style="flex:1; padding:8px; border:none; border-radius:4px; background:#2b3b4b; color:#ecf0f1; cursor:pointer;">物理参数</button>
+        </div>
+        <div class="config-form-container">
+          <div id="configTabBasic" style="display:block;">
+            <div class="form-group"><label class="form-label">仿真车名称</label><input type="text" class="form-input" id="configRobotName" placeholder=""></div>
+            <div class="form-group"><label class="form-label">仿真车类型</label><select class="form-select" id="configRobotType"><option value="AGV">AGV</option><option value="Fork">Fork</option><option value="Load">Load</option></select></div>
+            <div class="form-group"><label class="form-label">仿真车IP地址</label><input type="text" class="form-input" id="configRobotIP" placeholder=""></div>
+            <div class="form-group"><label class="form-label">厂商</label><input type="text" class="form-input" id="configRobotManufacturer" placeholder="厂商名称"></div>
+            <div class="form-group"><label class="form-label">版本</label><input type="text" class="form-input" id="configRobotVersion" placeholder="版本号" value="v2"></div>
+            <div class="form-group"><label class="form-label">已加载地图</label><select class="form-select" id="configMapSelect" style="width:100%"><option value="">不变</option></select><div id="configMapSelectedText" class="form-hint" style="font-size:12px;color:#bdc3c7;word-break:break-all;margin-top:4px;">当前: <span id="configMapSelectedLabel"></span></div></div>
+            <div class="form-group"><label class="form-label">初始位置</label><select class="form-select" id="configInitialPosition"><option value="">选择初始位置</option></select></div>
+            <div class="form-group"><label class="form-label">电量 (%)</label><input type="number" class="form-input" id="configBattery" value="100" min="0" max="100"></div>
+            <div class="form-group"><label class="form-label">朝向 (弧度)</label><input type="number" class="form-input" id="configOrientation" value="0" step="0.01" min="-3.14" max="3.14"></div>
+          </div>
+          <div id="configTabPhysical" style="display:none;">
+            <div class="form-group"><label class="form-label">运行速度 (m/s)</label><input type="number" class="form-input" id="factsheetSpeed" step="0.01" placeholder="默认 1.0"></div>
+            <div class="form-group"><label class="form-label">最小速度 (m/s)</label><input type="number" class="form-input" id="factsheetSpeedMin" step="0.01" placeholder="默认 0.01"></div>
+            <div class="form-group"><label class="form-label">最大速度 (m/s)</label><input type="number" class="form-input" id="factsheetSpeedMax" step="0.01" placeholder="默认 2"></div>
+            <div class="form-group"><label class="form-label">最大加速度 (m/s²)</label><input type="number" class="form-input" id="factsheetAccelMax" step="0.01" placeholder="默认 2"></div>
+            <div class="form-group"><label class="form-label">最大减速度 (m/s²)</label><input type="number" class="form-input" id="factsheetDecelMax" step="0.01" placeholder="默认 2"></div>
+            <div class="form-group"><label class="form-label">最小高度 (m)</label><input type="number" class="form-input" id="factsheetHeightMin" step="0.01" placeholder="默认 0.01"></div>
+            <div class="form-group"><label class="form-label">最大高度 (m)</label><input type="number" class="form-input" id="factsheetHeightMax" step="0.01" placeholder="默认 0.10"></div>
+            <div class="form-group"><label class="form-label">宽度 (m)</label><input type="number" class="form-input" id="factsheetWidth" step="0.001" placeholder="默认 0.745"></div>
+            <div class="form-group"><label class="form-label">长度 (m)</label><input type="number" class="form-input" id="factsheetLength" step="0.001" placeholder="默认 1.03"></div>
+            <div class="form-group"><label class="form-label">雷达扇面 (°)</label><input type="number" class="form-input" id="factsheetRadarFov" step="1" placeholder="默认 60"></div>
+            <div class="form-group"><label class="form-label">雷达半径 (m)</label><input type="number" class="form-input" id="factsheetRadarRadius" step="0.01" placeholder="默认 0.5"></div>
+            <div class="form-group"><label class="form-label">安全范围系数</label><input type="number" class="form-input" id="factsheetSafetyScale" step="0.01" placeholder="默认 1.1"></div>
+            <details style="margin-top:8px;">
+              <summary style="cursor:pointer;">电池参数（热加载）</summary>
+              <div class="form-group" style="margin-top:8px;"><label class="form-label">默认电量 (%)</label><input type="number" class="form-input" id="agvBatteryDefault" placeholder="如: 100" step="0.1"></div>
+              <div class="form-group"><label class="form-label">空闲耗电 (百分点/分钟)</label><input type="number" class="form-input" id="agvBatteryIdle" placeholder="如: 1.0" step="0.1"></div>
+              <div class="form-group"><label class="form-label">空载耗电系数</label><input type="number" class="form-input" id="agvBatteryEmptyMult" placeholder="如: 1.5" step="0.1"></div>
+              <div class="form-group"><label class="form-label">载货耗电系数</label><input type="number" class="form-input" id="agvBatteryLoadedMult" placeholder="如: 2.5" step="0.1"></div>
+              <div class="form-group"><label class="form-label">充电速度 (百分点/分钟)</label><input type="number" class="form-input" id="agvBatteryCharge" placeholder="如: 10.0" step="0.1"></div>
+            </details>
+            <div class="form-hint" style="font-size:12px;color:#bdc3c7;word-break:break-all;margin-top:6px;">注：速度/加减速会影响运动控制；宽度/长度/高度参数留作碰撞管理接口。</div>
+          </div>
+        </div>
+        <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+          <button class="btn-saveconfig" onclick="saveConfig()">保存配置</button>
+          <button class="btn-cancel-small" onclick="closeConfigModal()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 设备配置弹窗 -->
+  <div id="equipConfigModal" class="modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); align-items:center; justify-content:center; z-index:2000;">
+    <div class="modal-content" style="width:520px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
+      <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
+        <div class="modal-title" style="font-weight:bold;">设备配置</div>
+        <button class="modal-close" onclick="closeEquipConfigModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+      <div class="modal-body modal-fixed-shell" style="padding:16px;">
+        <div class="modal-scroll-container">
+          <div id="equipConfigForm"></div>
+        </div>
+        <div class="modal-fixed-footer">
+          <button class="btn-saveconfig" onclick="saveEquipConfig()">保存配置</button>
+          <button class="btn-cancel-small" onclick="closeEquipConfigModal()">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+ </body>
+
+</html>
+
