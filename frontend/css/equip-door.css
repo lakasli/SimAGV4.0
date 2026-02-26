@@ -1,0 +1,100 @@
+.equip-door .double-door {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  transform-style: preserve-3d;
+  transition: transform .5s ease;
+}
+
+.equip-door .door-left,
+.equip-door .door-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+  transition: transform .8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equip-door .door-left {
+  left: 0;
+  border-right: 1px solid #bdc3c7;
+  transform-origin: left center;
+}
+
+.equip-door .door-right {
+  right: 0;
+  border-left: 1px solid #bdc3c7;
+  transform-origin: right center;
+}
+
+.equip-door .door-handle {
+  width: 8px;
+  height: 30px;
+  background-color: #95a5a6;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.equip-door .door-left .door-handle {
+  right: 15px;
+}
+
+.equip-door .door-right .door-handle {
+  left: 15px;
+}
+
+.equip-door .door-panel {
+  width: 80%;
+  height: 90%;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  position: relative;
+}
+
+.equip-door .door-panel::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: #bdc3c7;
+}
+
+.equip-door .door-panel::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: #bdc3c7;
+}
+
+.equip-door .door-open .door-left {
+  transform: rotateY(75deg);
+}
+
+.equip-door .door-open .door-right {
+  transform: rotateY(-75deg);
+}
+
+.equip-door-controls {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.equip-door-controls .btn {
+  padding: 4px 8px;
+  font-size: 12px;
+}

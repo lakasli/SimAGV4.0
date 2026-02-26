@@ -1,0 +1,69 @@
+.equip-light {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  container-type: size;
+}
+
+.equip-light .warning-light {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 1.2cqw 3.8cqw rgba(0, 0, 0, 0.1), inset 0 0 3.2cqw rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equip-light .light-cover {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1.6cqw);
+  -webkit-backdrop-filter: blur(1.6cqw);
+  border: 0.15cqw solid rgba(168, 209, 17, 0.3);
+  z-index: 2;
+  box-shadow: inset 0 0 3.2cqw rgba(255, 255, 255, 0.5), 0 0 3.2cqw rgba(255, 255, 255, 0.3);
+}
+
+.equip-light .light-bulb {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: #8B0000;
+  box-shadow: inset 0 0 4.8cqw rgba(0, 0, 0, 0.5), 0 0 3.2cqw rgba(139, 0, 0, 0.3);
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.equip-light .light-base {
+  position: absolute;
+  bottom: -2.4cqh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 19.2cqw;
+  height: 3.2cqh;
+  background-color: #bdc3c7;
+  border-radius: 1.6cqw;
+  box-shadow: 0 0.8cqw 2.4cqw rgba(0, 0, 0, 0.1);
+}
+
+.equip-light .light-on .light-bulb {
+  background-color: #FF0000;
+  box-shadow: inset 0 0 4.8cqw rgba(255, 255, 255, 0.3), 0 0 6.4cqw rgba(255, 0, 0, 0.7), 0 0 12.8cqw rgba(255, 0, 0, 0.5);
+  animation: equipLightPulse 1.5s infinite alternate;
+}
+
+@keyframes equipLightPulse {
+  0% {
+    box-shadow: inset 0 0 4.8cqw rgba(122, 139, 146, 0.3), 0 0 6.4cqw rgba(255, 0, 0, 0.7), 0 0 12.8cqw rgba(255, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow: inset 0 0 4.8cqw rgba(255, 255, 255, 0.3), 0 0 9.6cqw rgba(255, 0, 0, 0.9), 0 0 19.2cqw rgba(255, 0, 0, 0.7);
+  }
+}

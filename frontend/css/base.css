@@ -1,0 +1,12 @@
+:root {
+  --map-canvas-width: 120vw;
+  --sidebar-width: 20vw
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f0f0;
+  overflow: hidden
+}

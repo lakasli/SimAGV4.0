@@ -1,0 +1,69 @@
+.robot-item {
+  background: #34495e;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border-left: 4px solid #3498db
+}
+
+.robot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px
+}
+
+.robot-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ecf0f1
+}
+
+.robot-info {
+  font-size: 12px;
+  color: #bdc3c7
+}
+
+.robot-actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap
+}
+
+.bin-cards {
+  margin-top: 6px;
+}
+
+.bin-card {
+  border: 1px solid #3b4a5a;
+  background: #2b3b4b;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 6px;
+}
+
+.bin-card-title {
+  font-weight: bold;
+  color: #ecf0f1;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.bin-kv {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #bdc3c7;
+}
+
+.bin-kv .key {
+  width: 50%;
+  color: #95a5a6;
+}
+
+.bin-kv .val {
+  width: 50%;
+  color: #ecf0f1;
+  word-break: break-all;
+}

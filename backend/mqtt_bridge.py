@@ -30,6 +30,19 @@ class MQTTBridge:
         self._equip_interface: str = "uequip"
         self._load_config()
 
+    def _dedup_brokers(self, brokers: list[tuple[str, int]]) -> list[tuple[str, int]]:
+        dedup: list[tuple[str, int]] = []
+        seen = set()
+        for h, p in brokers:
+            key = (str(h).strip(), int(p))
+            if not key[0]:
+                continue
+            if key in seen:
+                continue
+            seen.add(key)
+            dedup.append(key)
+        return dedup
+
     def _load_config(self) -> None:
         import os
         import yaml
@@ -94,17 +107,40 @@ class MQTTBridge:
         local_default = ("127.0.0.1", 1883)
         if local_default not in brokers:
             brokers.append(local_default)
-        dedup: list[tuple[str, int]] = []
-        seen = set()
-        for h, p in brokers:
-            key = (str(h).strip(), int(p))
-            if not key[0]:
-                continue
-            if key in seen:
-                continue
-            seen.add(key)
-            dedup.append(key)
-        self._brokers = dedup
+        self._brokers = self._dedup_brokers(brokers)
+
+    def refresh_brokers(self) -> None:
+        current = list(self._brokers)
+        base = list(self._brokers)
+        try:
+            self._load_config()
+            base = list(self._brokers)
+        except Exception:
+            base = list(self._brokers)
+        finally:
+            self._brokers = current
+        brokers = list(base)
+        try:
+            if self.agv_manager:
+                for info in self.agv_manager.list_agvs():
+                    ip = str(getattr(info, "IP", "") or "").strip()
+                    if ip:
+                        brokers.append((ip, 1883))
+        except Exception:
+            pass
+        target = self._dedup_brokers(brokers)
+        if target == current:
+            return
+        self._brokers = target
+        if self._clients:
+            try:
+                self.stop()
+            except Exception:
+                pass
+            try:
+                self.start()
+            except Exception:
+                pass
 
     def start(self) -> None:
         self._clients = []

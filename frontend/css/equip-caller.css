@@ -1,0 +1,49 @@
+.equip-caller {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  container-type: size;
+}
+
+.equip-caller .caller {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 1.2cqw 3.8cqw rgba(0,0,0,0.1), inset 0 0 3.2cqw rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.equip-caller .caller-button {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #bdc3c7;
+  box-shadow: inset 0 0 2.4cqw rgba(0,0,0,0.3);
+  transition: all .3s ease;
+}
+
+.equip-caller .caller-led {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
+  background-color: #7f8c8d;
+  box-shadow: 0 0 1.6cqw rgba(0,0,0,0.2);
+}
+
+.equip-caller .caller-pressed .caller-button {
+  background-color: #e74c3c;
+  box-shadow: inset 0 0 2.4cqw rgba(0,0,0,0.4), 0 0 4.8cqw rgba(231, 76, 60, 0.7);
+  transform: scale(0.96);
+}
+
+.equip-caller .caller-pressed .caller-led {
+  background-color: #e74c3c;
+  box-shadow: 0 0 3.2cqw rgba(231,76,60,.8);
+}

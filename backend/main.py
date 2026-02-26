@@ -926,6 +926,12 @@ def register_agvs(body: Union[RegisterRequest, List[AGVRegistration]]):
                 pass
     except Exception as e:
         print(f"[ConfigStore] post-register restore failed: {e}")
+    try:
+        bridge = getattr(app.state, "mqtt_bridge", None)
+        if bridge:
+            bridge.refresh_brokers()
+    except Exception as e:
+        print(f"[MQTTBridge] refresh brokers after register failed: {e}")
     return RegisterResponse(registered=registered, skipped=skipped)
 
 @app.delete("/api/agvs/{serial_number}", response_model=UnregisterResponse)
@@ -943,6 +949,12 @@ def unregister_agv(serial_number: str):
         instance_store.delete_instance_dir(serial_number)
     except Exception as e:
         print(f"[InstanceStore] delete instance dir failed for {serial_number}: {e}")
+    try:
+        bridge = getattr(app.state, "mqtt_bridge", None)
+        if bridge:
+            bridge.refresh_brokers()
+    except Exception as e:
+        print(f"[MQTTBridge] refresh brokers after unregister failed: {e}")
     return UnregisterResponse(removed=True)
 
 @app.patch("/api/agv/{serial_number}/config/static", response_model=AGVInfo)
@@ -950,11 +962,42 @@ def patch_static_config(serial_number: str, body: StaticConfigPatch):
     updated = agv_manager.update_static(serial_number, body)
     if not updated:
         raise HTTPException(status_code=404, detail="AGV not found")
+    try:
+        bridge = getattr(app.state, "mqtt_bridge", None)
+        if bridge:
+            bridge.refresh_brokers()
+    except Exception as e:
+        print(f"[MQTTBridge] refresh brokers after static patch failed: {e}")
     return updated
 
 @app.websocket("/ws")
 async def ws_endpoint(ws: WebSocket):
     await ws_manager.connect(ws)
+    try:
+        agvs = agv_manager.list_agvs()
+        for info in agvs:
+            try:
+                st = agv_manager.get_status(info.serial_number)
+            except Exception:
+                st = None
+            if not st:
+                continue
+            try:
+                payload = {
+                    "serial_number": st.serial_number,
+                    "agv_position": {
+                        "x": st.position.x,
+                        "y": st.position.y,
+                        "theta": st.position.theta,
+                        "map_id": st.current_map,
+                    },
+                    "battery_state": {"battery_charge": st.battery_level},
+                }
+                await ws_manager.send_json_to(ws, {"type": "mqtt_state", "topic": "snapshot/state", "payload": payload, "broker": ""})
+            except Exception:
+                continue
+    except Exception:
+        pass
     try:
         while True:
             await asyncio.sleep(3600)
@@ -974,6 +1017,10 @@ async def _start_ws_broadcast():
     # Start MQTT bridge (sink simulator state into AGVManager)
     loop_obj = asyncio.get_running_loop()
     bridge = MQTTBridge(project_root / "SimAGV" / "config.yaml", ws_manager.broadcast_json, loop_obj, agv_manager)
+    try:
+        bridge.refresh_brokers()
+    except Exception as e:
+        print(f"[MQTTBridge] refresh brokers on startup failed: {e}")
     bridge.start()
     app.state.mqtt_bridge = bridge
     # Initialize MQTT publisher

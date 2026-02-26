@@ -1,0 +1,10 @@
+.equip-overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.equip-overlay-layer .equip-item {
+  position: absolute;
+  transform-origin: center;
+}

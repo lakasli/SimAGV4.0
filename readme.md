@@ -171,3 +171,7 @@ SimAGV3.0/
 ### API 文档
 
 启动服务后，可访问 `http://localhost:7073/docs` 查看完整的 Swagger API 文档。
+
+前端frontend_3D启动命令
+cd frontend_3D 
+npm run dev -- --host 0.0.0.0

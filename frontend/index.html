@@ -6,11 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AGV地图查看器</title>
   <link rel="stylesheet" href="/static/css/index.css?v=202512241158" />
-  <link rel="stylesheet" href="/static/css/agv.css" />
-  <link rel="stylesheet" href="/static/css/door.css" />
-  <link rel="stylesheet" href="/static/css/elevator.css" />
-  <link rel="stylesheet" href="/static/css/light.css" />
-  <link rel="stylesheet" href="/static/css/caller.css" />
 </head>
 
 <body>
@@ -19,33 +14,33 @@
     <div class="controls">
       <div class="status" id="status">准备就绪</div>
       <select id="viewerMapSelect" class="form-select" style="width:120px;"><option value="">请选择地图</option></select>
-      <button class="btn" onclick="applyViewerMap()">切换地图</button>
-      <select id="floorSelect" class="form-select" style="width:auto;" onchange="switchFloor(this.value)">
+      <button class="btn" id="viewerMapApplyBtn">切换地图</button>
+      <select id="floorSelect" class="form-select" style="width:auto;">
         <option value="">加载中...</option>
       </select>
-      <button class="btn" onclick="cycleFloor()">切换楼层</button>
-      <button class="btn" onclick="openErrorInjectModal()">错误注入</button>
-      <button class="btn" onclick="openPerfModal()">性能</button>
-      <button class="btn" onclick="openSettingsModal()">设置</button>
+      <button class="btn" id="cycleFloorBtn">切换楼层</button>
+      <button class="btn" id="openErrorInjectBtn">错误注入</button>
+      <button class="btn" id="openPerfBtn">性能</button>
+      <button class="btn" id="openSettingsBtn">设置</button>
     </div>
   </div>
 
-  <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">打开</button>
+  <button class="sidebar-toggle" id="sidebarToggle">打开</button>
 
   <div class="sidebar sidebar-width-sync" id="sidebar">
     <div class="sidebar-header">
-      <div class="sidebar-title">仿真仿真车管理</div>
+      <div class="sidebar-title">仿真车管理</div>
     </div>
     <div class="sidebar-tabs">
-      <button class="tab-button active" onclick="switchTab('list')">仿真车列表</button>
-      <button class="tab-button" onclick="switchTab('equip')">仿真设备列表</button>
+      <button class="tab-button active" data-tab="list">仿真车列表</button>
+      <button class="tab-button" data-tab="equip">仿真设备列表</button>
     </div>
     <div class="sidebar-content">
       <div class="tab-content active" id="listTab">
         <div class="robot-list">
           <div id="robotListContainer" class="list-scroll"></div>
           <div class="form-group sidebar-footer" style="margin-top:0px;">
-            <button class="btn-primary" onclick="openRegisterModal()">注册仿真车</button>
+            <button class="btn-primary" id="openRegisterBtn">注册仿真车</button>
           </div>
         </div>
       </div>
@@ -58,7 +53,7 @@
   </div>
 
   <div class="canvas-container" id="canvasContainer">
-    <canvas id="mapCanvas"></canvas>
+    <div id="canvas-container"></div>
     <div class="loading" id="loading" style="display:none;">正在加载地图数据...</div>
     <div class="equip-overlay-layer" id="equipOverlayLayer" style="pointer-events:none;"></div>
     <div class="info-panel">
@@ -101,10 +96,39 @@
     </div>
   </div>
   
-    <script src="/static/src/services/pathfinding.js?v=20260203"></script>
-    <script src="/static/js/agv-component.js?v=20260203"></script>
-    <script src="/static/js/saveConfig.js?v=20260203"></script>
-    <script src="/static/js/index.js?v=20260205"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+    <script src="/static/src/services/pathfinding.js?v=20260225"></script>
+    <script src="/static/js/agv-component.js?v=20260225"></script>
+    <script src="/static/js/core/globals.js?v=20260225"></script>
+    <script src="/static/js/core/status.js?v=20260225"></script>
+    <script src="/static/js/core/config.js?v=20260225"></script>
+    <script src="/static/js/ui/perf.js?v=20260225"></script>
+    <script src="/static/js/map/floors.js?v=20260225"></script>
+    <script src="/static/js/map/bin-tasks.js?v=20260225"></script>
+    <script src="/static/js/map/draw.js?v=20260225"></script>
+    <script src="/static/js/map/hit-test.js?v=20260225"></script>
+    <script src="/static/js/map/info-panels.js?v=20260225"></script>
+    <script src="/static/js/map/context-menus.js?v=20260225"></script>
+    <script src="/static/js/map/pallet.js?v=20260225"></script>
+    <script type="module" src="/static/js/map/canvas.js?v=20260225"></script>
+    <script src="/static/js/map/load.js?v=20260225"></script>
+    <script src="/static/js/map/render-loop.js?v=20260225"></script>
+    <script src="/static/js/ui/sidebar.js?v=20260225"></script>
+    <script src="/static/js/ui/robots.js?v=20260225"></script>
+    <script src="/static/js/ui/modals.js?v=20260225"></script>
+    <script src="/static/js/ui/bindings.js?v=20260225"></script>
+    <script src="/static/js/ui/keyboard.js?v=20260225"></script>
+    <script src="/static/js/nav/navigation.js?v=20260225"></script>
+    <script src="/static/js/comm/websocket.js?v=20260225"></script>
+    <script src="/static/js/equip/equipments.js?v=20260225"></script>
+    <script src="/static/js/index.js?v=20260225"></script>
     <script type="text/plain" id="legacy-inline-js" data-disabled="true">
   
   </script>
@@ -113,7 +137,7 @@
     <div class="modal-content" style="width:420px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">注册仿真车</div>
-        <button class="modal-close" onclick="closeRegisterModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="register" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div class="modal-body" style="padding:16px;">
         <div class="robot-form">
@@ -130,7 +154,7 @@
               id="robotManufacturer" placeholder="厂商名称" value="SEER"></div>
           <div class="form-group"><label class="form-label">版本</label><input type="text" class="form-input"
               id="robotVersion" placeholder="版本号" value="v2"></div>
-          <div class="form-group"><button class="btn-primary" onclick="registerRobot()">注册仿真车</button></div>
+          <div class="form-group"><button class="btn-primary" id="submitRegisterBtn">注册仿真车</button></div>
         </div>
       </div>
     </div>
@@ -140,7 +164,7 @@
     <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">性能监测</div>
-        <button class="modal-close" onclick="closePerfModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="perf" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div class="modal-body" style="padding:16px;">
         <div id="perfTabSummary" style="display:block;">
@@ -163,7 +187,7 @@
     <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">仿真设置（热加载）</div>
-        <button class="modal-close" onclick="closeSettingsModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="settings" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div class="modal-body modal-fixed-shell" style="padding:16px;">
         <div class="modal-scroll-container">
@@ -174,8 +198,8 @@
           <div class="form-group"><label class="form-label">前端轮询间隔 (ms)</label><input type="number" class="form-input" id="settingsFrontendPoll" placeholder="如: 1000" step="10"></div>
         </div>
         <div class="modal-fixed-footer">
-          <button class="btn-saveconfig" onclick="saveSimSettings()">保存</button>
-          <button class="btn-cancel-small" onclick="closeSettingsModal()">取消</button>
+          <button class="btn-saveconfig" id="saveSettingsBtn">保存</button>
+          <button class="btn-cancel-small" data-close="settings">取消</button>
         </div>
       </div>
     </div>
@@ -186,7 +210,7 @@
     <div class="modal-content" style="width:460px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">错误注入</div>
-        <button class="modal-close" onclick="closeErrorInjectModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="error-inject" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div class="modal-body" style="padding:16px;">
         <div class="form-group">
@@ -197,15 +221,15 @@
         </div>
         <div class="form-group">
           <label class="form-label">目标仿真车</label>
-          <select class="form-select" id="errorInjectRobotSelect" onchange="updateErrorInjectPreview()">
+          <select class="form-select" id="errorInjectRobotSelect">
             <option value="">请选择仿真车</option>
           </select>
           <div class="form-hint" style="font-size:12px;color:#bdc3c7;word-break:break-all;margin-top:4px;">提示：将按 1s 间隔依次发送：控制权切换 SERVICE → initPosition 重叠定位（朝向取反） → 控制权切换 AUTOMATIC</div>
         </div>
 
         <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
-          <button class="btn-saveconfig" onclick="submitErrorInjection()">注入</button>
-          <button class="btn-cancel-small" onclick="closeErrorInjectModal()">取消</button>
+          <button class="btn-saveconfig">注入</button>
+          <button class="btn-cancel-small" data-close="error-inject">取消</button>
         </div>
       </div>
     </div>
@@ -216,12 +240,12 @@
     <div class="modal-content" style="width:calc(30vw + 32px); max-width:40vw; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">仿真车高级配置</div>
-        <button class="modal-close" onclick="closeConfigModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="config" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div style="padding:16px;">
         <div style="display:flex; gap:8px; margin-bottom:12px;">
-          <button id="configTabBtnBasic" onclick="switchConfigTab('basic')" style="flex:1; padding:8px; border:none; border-radius:4px; background:#34495e; color:#ecf0f1; cursor:pointer;">基本</button>
-          <button id="configTabBtnPhysical" onclick="switchConfigTab('physical')" style="flex:1; padding:8px; border:none; border-radius:4px; background:#2b3b4b; color:#ecf0f1; cursor:pointer;">物理参数</button>
+          <button id="configTabBtnBasic" style="flex:1; padding:8px; border:none; border-radius:4px; background:#34495e; color:#ecf0f1; cursor:pointer;">基本</button>
+          <button id="configTabBtnPhysical" style="flex:1; padding:8px; border:none; border-radius:4px; background:#2b3b4b; color:#ecf0f1; cursor:pointer;">物理参数</button>
         </div>
         <div class="config-form-container">
           <div id="configTabBasic" style="display:block;">
@@ -260,8 +284,8 @@
           </div>
         </div>
         <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
-          <button class="btn-saveconfig" onclick="saveConfig()">保存配置</button>
-          <button class="btn-cancel-small" onclick="closeConfigModal()">取消</button>
+          <button class="btn-saveconfig">保存配置</button>
+          <button class="btn-cancel-small" data-close="config">取消</button>
         </div>
       </div>
     </div>
@@ -271,15 +295,15 @@
     <div class="modal-content" style="width:520px; background:#2c3e50; color:#ecf0f1; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,.3);">
       <div class="modal-header" style="padding:12px 16px; border-bottom:1px solid #34495e; display:flex; align-items:center; justify-content:space-between;">
         <div class="modal-title" style="font-weight:bold;">设备配置</div>
-        <button class="modal-close" onclick="closeEquipConfigModal()" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
+        <button class="modal-close" data-close="equip-config" style="background:transparent; border:none; color:#ecf0f1; font-size:20px; cursor:pointer;">&times;</button>
       </div>
       <div class="modal-body modal-fixed-shell" style="padding:16px;">
         <div class="modal-scroll-container">
           <div id="equipConfigForm"></div>
         </div>
         <div class="modal-fixed-footer">
-          <button class="btn-saveconfig" onclick="saveEquipConfig()">保存配置</button>
-          <button class="btn-cancel-small" onclick="closeEquipConfigModal()">取消</button>
+          <button class="btn-saveconfig">保存配置</button>
+          <button class="btn-cancel-small" data-close="equip-config">取消</button>
         </div>
       </div>
     </div>

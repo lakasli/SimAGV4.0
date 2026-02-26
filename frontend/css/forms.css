@@ -1,0 +1,22 @@
+.form-group {
+  margin-bottom: 12px
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #ecf0f1
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  background: #34495e;
+  color: #fff;
+  font-size: 14px;
+  box-sizing: border-box
+}

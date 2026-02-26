@@ -17,7 +17,7 @@ function updateAgvPhysicalConfig(robotName, width, length) {
   }
 }
 
-async function saveConfig() {
+async function saveLegacyConfig() {
   if (!window.currentConfigRobotId) return;
   const id = window.currentConfigRobotId;
   const robot = registeredRobots.find(r => r.robot_name === id);
@@ -117,3 +117,6 @@ async function saveConfig() {
     alert('保存配置失败: ' + e.message);
   }
 }
+
+window.SimViewer = window.SimViewer || {};
+window.SimViewer.saveLegacyConfig = saveLegacyConfig;

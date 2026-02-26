@@ -1,0 +1,152 @@
+.btn {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px
+}
+
+.btn:hover {
+  background: #2980b9
+}
+
+.btn-primary {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%
+}
+
+.btn-primary:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.btn-primary:hover {
+  background: #2980b9
+}
+
+.btn-saveconfig {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 70%
+}
+
+.btn-saveconfig:hover {
+  background: #2980b9
+}
+
+.btn-cancel-small {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 30%
+}
+
+.btn-cancel-small:hover {
+  background: #e67e22
+}
+
+.btn-small {
+  background: #5d6d7e;
+  color: #fff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 30%
+}
+
+.btn-small:active {
+  transform: translateY(1px)
+}
+
+.btn-power-small {
+  background: #7f8c8d;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px
+}
+
+.btn-power-small.on {
+  background: #27ae60
+}
+
+.btn-power-small.off {
+  background: #7f8c8d
+}
+
+.btn-power-small.busy {
+  opacity: .6;
+  cursor: not-allowed
+}
+
+.btn-power-small:disabled {
+  opacity: .6;
+  cursor: not-allowed
+}
+
+.btn-delete-small {
+  padding: 5px 5px;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer
+}
+
+.btn-control-small {
+  background: #8e44ad
+}
+
+.btn-control-small:hover {
+  background: #7d3c98
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 30%
+}
+
+.btn-danger:hover {
+  background: #c0392b
+}
+
+.btn-config-small {
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  padding: 5px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 30%
+}
+
+.btn-config-small:hover {
+  background: #e67e22
+}
