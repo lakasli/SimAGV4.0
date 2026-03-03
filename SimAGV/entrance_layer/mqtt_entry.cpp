@@ -100,15 +100,20 @@ simagv::l2::CommandIntent MqttEntry::buildIntent(const std::string& topic, const
     }
 
     const simagv::json::Object obj = parsed.asObject();
+    
+    // 检查Order和InstantActions类型是否必须有headerId字段且为int类型
+    if (topicType == simagv::l2::TopicType::Order || topicType == simagv::l2::TopicType::InstantActions) {
+        const auto* headerIdValue = simagv::l2::tryGetSnakeOrCamel(obj, "header_id", "headerId");
+        if (headerIdValue == nullptr) {
+            throw std::runtime_error("missing_header_id");
+        }
+        if (!headerIdValue->isNumber()) {
+            throw std::runtime_error("invalid_header_id_type");
+        }
+    }
+    
     uint64_t headerId = simagv::l2::readUintOr(obj, "header_id", "headerId", 0);
     const uint64_t serial = simagv::l2::readUintOr(obj, "serial", "serial", 0);
-
-    if (topicType == simagv::l2::TopicType::Order && headerId == 0) {
-        throw std::runtime_error("missing_header_id");
-    }
-    if (topicType == simagv::l2::TopicType::InstantActions && headerId == 0) {
-        headerId = (nowMsValue == 0) ? 1U : nowMsValue;
-    }
 
     std::string mapId = simagv::l2::readStringOr(obj, "map_id", "mapId", "");
     mapId = simagv::l2::canonicalizeMapId(mapId);

@@ -60,7 +60,7 @@ function applyAgvProcessStatusToRobots(processes) {
         changed = true;
       }
     }
-    if (changed && typeof updateRobotList === 'function') updateRobotList();
+    if (changed && typeof requestUpdateRobotList === 'function') requestUpdateRobotList();
   } catch (_) {}
 }
 

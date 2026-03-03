@@ -35,7 +35,7 @@ function initWebSocket() {
         registeredRobots.forEach(r => {
           r.commConnected = false;
         });
-        updateRobotList();
+        if (typeof requestUpdateRobotList === 'function') requestUpdateRobotList();
       } catch (_) {}
       setTimeout(initWebSocket, 1000);
     };
@@ -74,7 +74,7 @@ function applyWSState(stateMsg) {
     robot.instanceStatus = '启动';
     robot.commConnected = true;
     robot.lastUpdateTs = Date.now();
-    updateRobotList();
+    if (typeof requestUpdateRobotList === 'function') requestUpdateRobotList();
 
     if (!window._wsDrawMapThrottle) {
       window._wsDrawMapThrottle = { timer: null, pending: false };
@@ -102,7 +102,7 @@ function startCommStatusGuard() {
       }
     }
     if (changed) {
-      try { updateRobotList(); } catch (_) {}
+      try { if (typeof requestUpdateRobotList === 'function') requestUpdateRobotList(); } catch (_) {}
     }
   }, 1000);
 }

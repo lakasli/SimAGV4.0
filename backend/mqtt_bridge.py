@@ -111,24 +111,11 @@ class MQTTBridge:
 
     def refresh_brokers(self) -> None:
         current = list(self._brokers)
-        base = list(self._brokers)
         try:
             self._load_config()
-            base = list(self._brokers)
-        except Exception:
-            base = list(self._brokers)
-        finally:
-            self._brokers = current
-        brokers = list(base)
-        try:
-            if self.agv_manager:
-                for info in self.agv_manager.list_agvs():
-                    ip = str(getattr(info, "IP", "") or "").strip()
-                    if ip:
-                        brokers.append((ip, 1883))
         except Exception:
             pass
-        target = self._dedup_brokers(brokers)
+        target = self._dedup_brokers(list(self._brokers))
         if target == current:
             return
         self._brokers = target

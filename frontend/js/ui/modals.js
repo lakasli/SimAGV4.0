@@ -260,10 +260,10 @@ async function saveRobotConfig() {
 
   const ip = String(document.getElementById('configRobotIP')?.value || '').trim();
   const ver = String(document.getElementById('configRobotVersion')?.value || '').trim();
-  const battery = Number(document.getElementById('configBattery')?.value);
+  const batteryRaw = Number(document.getElementById('configBattery')?.value);
   const selMap = String(document.getElementById('configMapSelect')?.value || '').trim();
   const posKey = String(document.getElementById('configInitialPosition')?.value || '').trim();
-  const theta = Number(document.getElementById('configOrientation')?.value);
+  const thetaRaw = Number(document.getElementById('configOrientation')?.value);
 
   const patches = [];
   if (ip && ip !== String(robot.ip || '').trim()) patches.push(['IP', ip]);
@@ -278,13 +278,18 @@ async function saveRobotConfig() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
       });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
+      if (!resp.ok) {
+        const errText = await resp.text();
+        throw new Error(`HTTP ${resp.status}: ${errText || resp.statusText}`);
+      }
       if (body.IP) robot.ip = body.IP;
       if (body.vda_version) robot.vda_version = body.vda_version;
     }
 
     const dyn = {};
-    if (isFinite(battery)) dyn.battery_level = battery;
+    if (Number.isFinite(batteryRaw)) {
+      dyn.battery_level = Math.round(batteryRaw);
+    }
     if (selMap) dyn.current_map = selMap;
 
     if (posKey) {
@@ -293,11 +298,12 @@ async function saveRobotConfig() {
       const st = Array.isArray(stations) ? stations.find(s => String(s.instanceName || s.pointName || s.id || '').trim() === posKey) : null;
       const px = st?.pos?.x ?? st?.x;
       const py = st?.pos?.y ?? st?.y;
-      if (isFinite(Number(px)) && isFinite(Number(py))) {
-        dyn.position = { x: Number(px), y: Number(py), theta: isFinite(theta) ? theta : (robot.currentPosition?.theta ?? 0) };
+      if (Number.isFinite(Number(px)) && Number.isFinite(Number(py))) {
+        const thetaVal = Number.isFinite(thetaRaw) ? thetaRaw : (robot.currentPosition?.theta ?? 0);
+        dyn.position = { x: Number(px), y: Number(py), theta: Number.isFinite(thetaVal) ? thetaVal : 0 };
       }
-    } else if (isFinite(theta) && robot.currentPosition && isFinite(Number(robot.currentPosition.x)) && isFinite(Number(robot.currentPosition.y))) {
-      dyn.position = { x: Number(robot.currentPosition.x), y: Number(robot.currentPosition.y), theta: theta };
+    } else if (Number.isFinite(thetaRaw) && robot.currentPosition && Number.isFinite(Number(robot.currentPosition.x)) && Number.isFinite(Number(robot.currentPosition.y))) {
+      dyn.position = { x: Number(robot.currentPosition.x), y: Number(robot.currentPosition.y), theta: thetaRaw };
     }
 
     if (Object.keys(dyn).length > 0) {
@@ -306,7 +312,10 @@ async function saveRobotConfig() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dyn)
       });
-      if (!resp2.ok) throw new Error(`HTTP ${resp2.status}: ${resp2.statusText}`);
+      if (!resp2.ok) {
+        const errText = await resp2.text();
+        throw new Error(`HTTP ${resp2.status}: ${errText || resp2.statusText}`);
+      }
     }
 
     closeConfigModal();

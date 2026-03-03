@@ -732,11 +732,11 @@ function drawRobots3D(robots, selectedRobotId) {
       agvModels.set(robotId, model);
     } else {
       const cachedPos = cachedRobotPositions.get(robotId);
-      if (cachedPos && cachedPos.x === pos3D.x && cachedPos.z === pos3D.z && cachedPos.theta === -theta) {
+      if (cachedPos && cachedPos.x === pos3D.x && cachedPos.z === pos3D.z && cachedPos.theta === theta - Math.PI / 2) {
       } else {
         model.position.set(pos3D.x, 0, pos3D.z);
-        model.rotation.y = -theta;
-        cachedRobotPositions.set(robotId, { x: pos3D.x, z: pos3D.z, theta: -theta });
+        model.rotation.y = theta - Math.PI / 2;
+        cachedRobotPositions.set(robotId, { x: pos3D.x, z: pos3D.z, theta: theta - Math.PI / 2 });
       }
     }
 
@@ -778,7 +778,7 @@ function updateAGVPosition(robotName, position, theta) {
 
   const pos3D = worldTo3D(position.x, position.y);
   model.position.set(pos3D.x, 0, pos3D.z);
-  model.rotation.y = -theta;
+  model.rotation.y = theta - Math.PI / 2;
 }
 
 function updateAGVStatus(robotName, statusKey) {

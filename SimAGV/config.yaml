@@ -17,7 +17,7 @@ sim_config:
   max_publish_hz: 30.0
   action_time: 1.0
   speed: 2.0
-  map_id: "beidaceshi-0205"
+  map_id: "beidaceshi-0819"
   radar_fov_deg: 60.0
   radar_radius_m: 0.5
   disable_radar_blocked_on_rotation: true
