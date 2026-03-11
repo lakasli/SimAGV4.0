@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { ProductionLineLoader } from '../SimEquipment/ProductionLine/index.js';
 
 window.THREE = THREE;
 window.RoundedBoxGeometry = RoundedBoxGeometry;
@@ -37,8 +38,9 @@ let cachedSelectedRouteId = null;
 let cachedPointsKey = null;
 let cachedRoutesKey = null;
 let cachedRobotPositions = new Map();
+let productionLineLoader = null;
 
-function initScene() {
+async function initScene() {
   const container = document.getElementById('canvas-container');
   if (!container) {
     console.error('Canvas container not found');
@@ -73,6 +75,9 @@ function initScene() {
   createGround();
 
   window.addEventListener('resize', onWindowResize);
+
+  productionLineLoader = new ProductionLineLoader();
+  await productionLineLoader.init(scene, camera);
 
   return true;
 }
@@ -358,21 +363,22 @@ function drawRoutes3D(routes, points, selectedRouteId) {
     let lineGeometry;
     let curve;
 
+    const routeY = 0.005;
     if (route.type === 'bezier3' && route.c1 && route.c2) {
       const c1_3D = worldTo3D(route.c1.x, route.c1.y);
       const c2_3D = worldTo3D(route.c2.x, route.c2.y);
 
       curve = new THREE.CubicBezierCurve3(
-        new THREE.Vector3(from3D.x, 0.05, from3D.z),
-        new THREE.Vector3(c1_3D.x, 0.05, c1_3D.z),
-        new THREE.Vector3(c2_3D.x, 0.05, c2_3D.z),
-        new THREE.Vector3(to3D.x, 0.05, to3D.z)
+        new THREE.Vector3(from3D.x, routeY, from3D.z),
+        new THREE.Vector3(c1_3D.x, routeY, c1_3D.z),
+        new THREE.Vector3(c2_3D.x, routeY, c2_3D.z),
+        new THREE.Vector3(to3D.x, routeY, to3D.z)
       );
       lineGeometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(50));
     } else {
       const points3D = [
-        new THREE.Vector3(from3D.x, 0.05, from3D.z),
-        new THREE.Vector3(to3D.x, 0.05, to3D.z)
+        new THREE.Vector3(from3D.x, routeY, from3D.z),
+        new THREE.Vector3(to3D.x, routeY, to3D.z)
       ];
       lineGeometry = new THREE.BufferGeometry().setFromPoints(points3D);
     }
@@ -427,7 +433,7 @@ function drawRoutes3D(routes, points, selectedRouteId) {
       const arrow = new THREE.Mesh(arrowGeo, arrowMat);
 
       arrow.position.copy(point);
-      arrow.position.y = 0.05;
+      arrow.position.y = routeY;
 
       scene.add(arrow);
       routeMeshes.push(arrow);
@@ -452,7 +458,7 @@ function drawRoutes3D(routes, points, selectedRouteId) {
 
       const midPoint = new THREE.Vector3(
         (from3D.x + to3D.x) / 2,
-        0.05,
+        routeY,
         (from3D.z + to3D.z) / 2
       );
       arrow.position.copy(midPoint);
@@ -485,12 +491,19 @@ function createAGVModel(agv, statusKey = 'idle') {
   pallet.position.set(0, 0.33, -0.1);
   group.add(pallet);
 
+  const nameLabel = createAGVNameLabel(agv.robot_name || 'AGV');
+  nameLabel.position.set(0, 0.37, -0.1);
+  group.add(nameLabel);
+
   const wheels = createWheels();
   group.add(wheels);
 
   const chargingModule = createChargingModule(statusConfig);
   chargingModule.position.set(0, 0.2, -0.77);
   group.add(chargingModule);
+
+  const agvScale = 1 / 1.4;
+  group.scale.set(agvScale, agvScale, agvScale);
 
   return group;
 }
@@ -700,6 +713,32 @@ function createChargingModule(statusConfig) {
   return group;
 }
 
+function createAGVNameLabel(name) {
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  canvas.width = 256;
+  canvas.height = 64;
+
+  context.fillStyle = '#f1f5f9';
+  context.font = 'bold 72px Arial';
+  context.textAlign = 'center';
+  context.textBaseline = 'middle';
+  context.fillText(name, 128, 32);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  const material = new THREE.MeshBasicMaterial({
+    map: texture,
+    transparent: true,
+    side: THREE.DoubleSide
+  });
+  const geometry = new THREE.PlaneGeometry(0.6, 0.15);
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.rotation.x = -Math.PI / 2;
+  mesh.rotation.z = -Math.PI / 2;
+
+  return mesh;
+}
+
 function drawRobots3D(robots, selectedRobotId) {
   if (!scene) return;
 
@@ -900,6 +939,10 @@ function animate() {
 
   controls.update();
 
+  if (productionLineLoader) {
+    productionLineLoader.animate();
+  }
+
   const time = Date.now() * 0.001;
 
   agvModels.forEach((model, agvId) => {
@@ -927,9 +970,12 @@ function animate() {
 function drawMap3D() {
   if (typeof mapData === 'undefined' || !mapData) return;
 
-  drawPoints3D(mapData.points, typeof selectedStationId !== 'undefined' ? selectedStationId : null);
   drawRoutes3D(mapData.routes, mapData.points, typeof selectedRouteId !== 'undefined' ? selectedRouteId : null);
-  drawRobots3D(typeof registeredRobots !== 'undefined' ? registeredRobots : [], typeof selectedRobotId !== 'undefined' ? selectedRobotId : null);
+  drawPoints3D(mapData.points, typeof selectedStationId !== 'undefined' ? selectedStationId : null);
+  drawRobots3D(
+    typeof registeredRobots !== 'undefined' ? registeredRobots : (window.registeredRobots || []),
+    typeof selectedRobotId !== 'undefined' ? selectedRobotId : (window.selectedRobotId || null)
+  );
 }
 
 function getCanvasElement() {
@@ -980,7 +1026,8 @@ window.SimViewer3D = {
   animate,
   worldTo3D,
   pos3DToWorld,
-  clearMapObjects
+  clearMapObjects,
+  getProductionLineLoader: () => productionLineLoader
 };
 
 export default window.SimViewer3D;

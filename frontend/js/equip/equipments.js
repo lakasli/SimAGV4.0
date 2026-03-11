@@ -24,11 +24,17 @@ function updateEquipmentList() {
   c.innerHTML = list.map(eq => {
     const title = String(eq.serial_number || eq.dir_name || '设备');
     const type = String(eq.type || '-');
-    const siteStr = Array.isArray(eq.site) ? eq.site.join(',') : (eq.site || '-');
-    const mapStr = Array.isArray(eq.map_id) ? eq.map_id.join(',') : (eq.map_id || '-');
+    const site = eq.site || [];
+    const mapId = eq.map_id || '-';
+    const siteStr = Array.isArray(site) && site.length > 0 
+      ? site.map(s => `(${(s.x || 0).toFixed(0)},${(s.y || 0).toFixed(0)})`).join(', ')
+      : '-';
+    const floorStr = Array.isArray(site) && site.length > 0
+      ? site.map(s => s.floor_name || '-').join(', ')
+      : '-';
     return `<div class="robot-item">
       <div class="robot-header"><div class="robot-name">${escapeHtml(title)}</div></div>
-      <div class="robot-info">类型: ${escapeHtml(type)} | 站点: ${escapeHtml(siteStr)} | 地图: ${escapeHtml(mapStr)}</div>
+      <div class="robot-info">类型: ${escapeHtml(type)} | 位姿: ${escapeHtml(siteStr)} | 地图: ${escapeHtml(mapId)} | 楼层: ${escapeHtml(floorStr)}</div>
     </div>`;
   }).join('');
 }

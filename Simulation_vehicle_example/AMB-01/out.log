@@ -1,3 +1,80 @@
 2026-03-03T00:57:24.795Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=132568723285824
 2026-03-03T00:57:24.797Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=132568723285824
 2026-03-03T00:57:24.797Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=132568723285824
+2026-03-10T08:03:40.434Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=127163777562432
+2026-03-10T08:30:18.729Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=139092097705792
+2026-03-10T08:37:27.885Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=125134613350208
+2026-03-10T08:37:27.886Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=125134613350208
+2026-03-10T08:37:27.886Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=125134613350208
+2026-03-10T08:37:27.887Z info: simconfig_received headerId=0 controlType=applyConfig timestamp= topic=file:/home/ubuntu/SimAGV4.0/Simulation_vehicle_example/AMB-01/config.yaml tid=125134613350208
+2026-03-10T08:37:27.887Z info: simconfig_apply_built headerId=0 stateHz=10 visHz=10 connectionHz=1 factsheetHz=0 maxPublishHz=30 simTimeScale=1 tid=125134613350208
+2026-03-10T08:37:27.897Z info: simconfig_apply_applied headerId=0 mapId=beidaceshi-0819 tid=125134613350208
+2026-03-10T08:59:32.938Z info: mqtt_rx type=simConfig topic=uagv/v2/SEER/AMB-01/simConfig headerId=0 timestamp= mapId=beidaceshi-0819 payloadBytes=535 tid=125134606169792
+2026-03-10T08:59:32.939Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773133172939 timestamp=2026-03-10T08:59:32.937Z actions=1 mapId=default payloadBytes=481 tid=125134606169792
+2026-03-10T08:59:32.949Z info: simconfig_received headerId=0 controlType=applyConfig timestamp= topic=uagv/v2/SEER/AMB-01/simConfig tid=125134613350208
+2026-03-10T08:59:32.949Z info: simconfig_apply_built headerId=0 stateHz=10 visHz=10 connectionHz=1 factsheetHz=0 maxPublishHz=30 simTimeScale=1 tid=125134613350208
+2026-03-10T08:59:32.949Z info: simconfig_apply_applied headerId=0 mapId=beidaceshi-0819 tid=125134613350208
+2026-03-10T08:59:32.949Z info: instant_received headerId=1773133172939 timestamp=2026-03-10T08:59:32.937Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T08:59:32.949Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=AUTOMATIC->AUTOMATIC paused=false->false tid=125134613350208
+2026-03-10T08:59:32.949Z info: instant_applied headerId=1773133172939 switchMapTarget=beidaceshi-0819 tid=125134613350208
+2026-03-10T09:04:39.590Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773133479590 timestamp=2026-03-10T09:04:39.589Z actions=1 mapId=default payloadBytes=503 tid=125134606169792
+2026-03-10T09:04:39.633Z info: instant_received headerId=1773133479590 timestamp=2026-03-10T09:04:39.589Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T09:04:39.633Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=AUTOMATIC->AUTOMATIC paused=false->false tid=125134613350208
+2026-03-10T09:04:39.633Z info: instant_applied headerId=1773133479590 switchMapTarget=beidaceshi-0819 tid=125134613350208
+2026-03-10T09:05:14.210Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773133514197 timestamp=2026-03-10T09:05:14.197Z actions=1 mapId=default payloadBytes=348 tid=125134606169792
+2026-03-10T09:05:14.223Z info: instant_received headerId=1773133514197 timestamp=2026-03-10T09:05:14.197Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T09:05:14.223Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=AUTOMATIC->SERVICE paused=false->false tid=125134613350208
+2026-03-10T09:05:14.223Z info: instant_applied headerId=1773133514197 switchMapTarget= tid=125134613350208
+2026-03-10T09:05:15.886Z info: mqtt_rx type=order topic=uagv/v2/SEER/AMB-01/order headerId=15876 timestamp=2026-03-10T09:05:15.876Z orderId=order-20260310090515876 orderUpdateId=0 mapId=default payloadBytes=1069 tid=125134606169792
+2026-03-10T09:05:15.932Z info: order_received headerId=15876 timestamp=2026-03-10T09:05:15.876Z orderId=order-20260310090515876 orderUpdateId=0 nodes=3 edges=2 topic=uagv/v2/SEER/AMB-01/order mapIdHint=default tid=125134613350208
+2026-03-10T09:05:15.932Z info: order_map_ready orderId=order-20260310090515876 orderUpdateId=0 mapId=beidaceshi-0819 tid=125134613350208
+2026-03-10T09:05:15.933Z info: nav_plan_built orderId=order-20260310090515876 orderUpdateId=0 mode=path nodes=3 edges=2 driving=true tid=125134613350208
+2026-03-10T09:05:15.933Z info: order_accepted headerId=15876 orderId=order-20260310090515876 orderUpdateId=0 tid=125134613350208
+2026-03-10T09:05:15.933Z info: nav_segment_start mode=path orderId=order-20260310090515876 edgeId=AP10-LM19 sequenceId=1 startNodeId=AP10 endNodeId=LM19 startX=-5.421 startY=-6.992 endX=-5.421 endY=-8.191 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:18.098Z info: nav_segment_done mode=path orderId=order-20260310090515876 edgeId=AP10-LM19 sequenceId=1 endNodeId=LM19 tid=125134613350208
+2026-03-10T09:05:18.149Z info: nav_segment_start mode=path orderId=order-20260310090515876 edgeId=LM19-LM18 sequenceId=2 startNodeId=LM19 endNodeId=LM18 startX=-5.421 startY=-8.191 endX=-4.013 endY=-8.191 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:20.465Z info: nav_segment_done mode=path orderId=order-20260310090515876 edgeId=LM19-LM18 sequenceId=2 endNodeId=LM18 tid=125134613350208
+2026-03-10T09:05:20.465Z info: nav_order_done orderId=order-20260310090515876 orderUpdateId=0 mode=path tid=125134613350208
+2026-03-10T09:05:34.100Z info: mqtt_rx type=order topic=uagv/v2/SEER/AMB-01/order headerId=34077 timestamp=2026-03-10T09:05:34.077Z orderId=order-20260310090534077 orderUpdateId=0 mapId=default payloadBytes=3372 tid=125134606169792
+2026-03-10T09:05:34.149Z info: order_received headerId=34077 timestamp=2026-03-10T09:05:34.077Z orderId=order-20260310090534077 orderUpdateId=0 nodes=10 edges=9 topic=uagv/v2/SEER/AMB-01/order mapIdHint=default tid=125134613350208
+2026-03-10T09:05:34.149Z info: order_map_ready orderId=order-20260310090534077 orderUpdateId=0 mapId=beidaceshi-0819 tid=125134613350208
+2026-03-10T09:05:34.149Z info: nav_plan_built orderId=order-20260310090534077 orderUpdateId=0 mode=path nodes=10 edges=9 driving=true tid=125134613350208
+2026-03-10T09:05:34.149Z info: order_accepted headerId=34077 orderId=order-20260310090534077 orderUpdateId=0 tid=125134613350208
+2026-03-10T09:05:34.150Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM18-LM17 sequenceId=1 startNodeId=LM18 endNodeId=LM17 startX=-4.013 startY=-8.191 endX=-2.616 endY=-8.191 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:34.807Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM18-LM17 sequenceId=1 endNodeId=LM17 tid=125134613350208
+2026-03-10T09:05:34.858Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM17-LM16 sequenceId=2 startNodeId=LM17 endNodeId=LM16 startX=-2.616 startY=-8.191 endX=-1.216 endY=-8.191 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:35.514Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM17-LM16 sequenceId=2 endNodeId=LM16 tid=125134613350208
+2026-03-10T09:05:35.564Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM16-LM72 sequenceId=3 startNodeId=LM16 endNodeId=LM72 startX=-1.216 startY=-8.191 endX=-1.216 endY=-11.071 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:38.592Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM16-LM72 sequenceId=3 endNodeId=LM72 tid=125134613350208
+2026-03-10T09:05:38.642Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM72-LM79 sequenceId=4 startNodeId=LM72 endNodeId=LM79 startX=-1.216 startY=-11.071 endX=-1.216 endY=-12.388 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:39.297Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM72-LM79 sequenceId=4 endNodeId=LM79 tid=125134613350208
+2026-03-10T09:05:39.348Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM79-LM165 sequenceId=5 startNodeId=LM79 endNodeId=LM165 startX=-1.216 startY=-12.388 endX=3.119 endY=-12.388 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:43.130Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM79-LM165 sequenceId=5 endNodeId=LM165 tid=125134613350208
+2026-03-10T09:05:43.180Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM165-LM62 sequenceId=6 startNodeId=LM165 endNodeId=LM62 startX=3.119 startY=-12.388 endX=5.564 endY=-12.388 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:44.390Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM165-LM62 sequenceId=6 endNodeId=LM62 tid=125134613350208
+2026-03-10T09:05:44.441Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM62-LM381 sequenceId=7 startNodeId=LM62 endNodeId=LM381 startX=5.564 startY=-12.388 endX=5.564 endY=-13.513 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:46.609Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM62-LM381 sequenceId=7 endNodeId=LM381 tid=125134613350208
+2026-03-10T09:05:46.659Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM381-LM231 sequenceId=8 startNodeId=LM381 endNodeId=LM231 startX=5.564 startY=-13.513 endX=5.564 endY=-16.037 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:47.918Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM381-LM231 sequenceId=8 endNodeId=LM231 tid=125134613350208
+2026-03-10T09:05:47.969Z info: nav_segment_start mode=path orderId=order-20260310090534077 edgeId=LM231-LM227 sequenceId=9 startNodeId=LM231 endNodeId=LM227 startX=5.564 startY=-16.037 endX=6.863 endY=-16.037 speed=2 rotationAllowed=true pathPoints=81 tid=125134613350208
+2026-03-10T09:05:50.183Z info: nav_segment_done mode=path orderId=order-20260310090534077 edgeId=LM231-LM227 sequenceId=9 endNodeId=LM227 tid=125134613350208
+2026-03-10T09:05:50.183Z info: nav_order_done orderId=order-20260310090534077 orderUpdateId=0 mode=path tid=125134613350208
+2026-03-10T09:08:40.259Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773133720239 timestamp=2026-03-10T09:08:40.239Z actions=1 mapId=default payloadBytes=350 tid=125134606169792
+2026-03-10T09:08:40.298Z info: instant_received headerId=1773133720239 timestamp=2026-03-10T09:08:40.239Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T09:08:40.298Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=SERVICE->AUTOMATIC paused=false->false tid=125134613350208
+2026-03-10T09:08:40.298Z info: instant_applied headerId=1773133720239 switchMapTarget= tid=125134613350208
+2026-03-10T10:01:30.912Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773136890913 timestamp=2026-03-10T10:01:30.913Z actions=1 mapId=default payloadBytes=348 tid=125134606169792
+2026-03-10T10:01:30.920Z info: instant_received headerId=1773136890913 timestamp=2026-03-10T10:01:30.913Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T10:01:30.920Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=AUTOMATIC->SERVICE paused=false->false tid=125134613350208
+2026-03-10T10:01:30.920Z info: instant_applied headerId=1773136890913 switchMapTarget= tid=125134613350208
+2026-03-10T10:01:31.428Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773136891443 timestamp=2026-03-10T10:01:31.443Z actions=1 mapId=default payloadBytes=350 tid=125134606169792
+2026-03-10T10:01:31.474Z info: instant_received headerId=1773136891443 timestamp=2026-03-10T10:01:31.443Z actions=1 topic=uagv/v2/SEER/AMB-01/instantActions mapIdHint=default tid=125134613350208
+2026-03-10T10:01:31.474Z info: engine_instant_applied actions=1 mapId=beidaceshi-0819->beidaceshi-0819 operatingMode=SERVICE->AUTOMATIC paused=false->false tid=125134613350208
+2026-03-10T10:01:31.474Z info: instant_applied headerId=1773136891443 switchMapTarget= tid=125134613350208
+2026-03-10T10:10:00.343Z info: mqtt_rx type=instantActions topic=uagv/v2/SEER/AMB-01/instantActions headerId=1773137400343 timestamp=2026-03-10T10:10:00.341Z actions=1 mapId=default payloadBytes=492 tid=125134606169792
+2026-03-10T10:10:00.354Z info: instant_received headerId=1773137400343 timestamp=2026-03-10T10:12026-03-10T10:10:40.334Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=128237643118400
+2026-03-10T10:10:40.336Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=128237643118400
+2026-03-10T10:10:40.336Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=128237643118400
+2026-03-10T10:39:45.748Z info: sim_start manufacturer=SEER serialNumber=AMB-01 vdaInterface=uagv vdaVersion=v2 vdaFullVersion=2.0.0 baseTopic=uagv/v2/SEER/AMB-01 mqttHost=127.0.0.1 mqttPort=1883 mqttClientId=simagv_runtime_AMB-01 tickMs=50 traceCapacity=2048 simTimeScale=1 stateHz=10 visHz=5 maxPublishHz=30 stdoutMqtt=false tid=131927842142016
+2026-03-10T10:39:45.750Z info: mqtt311_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 keepAliveSec=60 hasWill=true tid=131927842142016
+2026-03-10T10:39:45.750Z info: mqtt_connected host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 subscribe=uagv/v2/SEER/AMB-01/{order,instantActions,simConfig} tid=131927842142016

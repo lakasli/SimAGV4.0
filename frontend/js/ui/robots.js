@@ -10,6 +10,17 @@ function selectRobot(id) {
   drawMap();
 }
 
+function scrollToRobotCard(id) {
+  const container = document.getElementById('robotListContainer');
+  if (!container) return;
+  const robotId = String(id || '').trim();
+  if (!robotId) return;
+  const card = container.querySelector(`.robot-item[data-robot-id="${CSS.escape(robotId)}"]`);
+  if (card) {
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
 async function removeRobot(serial) {
   const id = String(serial || '').trim();
   if (!id) return;
@@ -124,7 +135,7 @@ async function loadRobotList() {
     const resp = await fetch(`${API_BASE_URL}/agvs`);
     if (!resp.ok) throw new Error(`HTTP ${resp.status}: ${resp.statusText}`);
     const agvs = await resp.json();
-    registeredRobots = (agvs || []).map(info => ({
+    const robots = (agvs || []).map(info => ({
       robot_name: info.serial_number,
       type: info.type,
       ip: info.IP,
@@ -141,6 +152,11 @@ async function loadRobotList() {
       forkHeight: 0,
       operatingMode: 'AUTOMATIC'
     }));
+    registeredRobots.length = 0;
+    robots.forEach(r => registeredRobots.push(r));
+    if (window.registeredRobots !== registeredRobots) {
+      window.registeredRobots = registeredRobots;
+    }
     updateRobotList();
     drawMap();
   } catch (err) {

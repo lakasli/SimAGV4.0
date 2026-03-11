@@ -5,10 +5,8 @@ from typing import Optional
 from pathlib import Path
 
 import paho.mqtt.client as mqtt
-try:
-    from SimVehicleSys.config.settings import get_config  # type: ignore
-except Exception:  # pragma: no cover
-    get_config = None  # type: ignore
+
+get_config = None  # SimVehicleSys not available
 
 from .agv_manager import AGVManager
 from .schemas import DynamicConfigUpdate, Position

@@ -30,9 +30,9 @@ sim_config:
   battery_charge_per_min: 10.0
   automatic_charging: true
 initial_pose:
-  pose_x: 0.0
-  pose_y: 0.0
-  pose_theta: 0.0
+  pose_x: 6.863
+  pose_y: -16.037
+  pose_theta: -3.14148
 factsheet:
   physicalParameters:
     speedMin: 0.01

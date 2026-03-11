@@ -119,20 +119,52 @@ function bezierTangent(p0, p1, p2, p3, t) {
   return { x: 3 * u * u * (p1.x - p0.x) + 6 * u * t * (p2.x - p1.x) + 3 * t * t * (p3.x - p2.x), y: 3 * u * u * (p1.y - p0.y) + 6 * u * t * (p2.y - p1.y) + 3 * t * t * (p3.y - p2.y) }; 
 }
 
-function normalizeEquipMapIdList(mapId) { 
+function validateSiteForRender(site) {
+  if (!site || !Array.isArray(site) || site.length === 0) {
+    return { valid: false, error: 'site 必须是非空数组' };
+  }
+  for (let i = 0; i < site.length; i++) {
+    const s = site[i];
+    if (typeof s !== 'object' || s === null) {
+      return { valid: false, error: `site[${i}] 必须是对象` };
+    }
+    if (typeof s.x !== 'number' || !isFinite(s.x)) {
+      return { valid: false, error: `site[${i}].x 必须是有效数字` };
+    }
+    if (typeof s.y !== 'number' || !isFinite(s.y)) {
+      return { valid: false, error: `site[${i}].y 必须是有效数字` };
+    }
+    if (typeof s.theta !== 'number' || !isFinite(s.theta)) {
+      return { valid: false, error: `site[${i}].theta 必须是有效数字` };
+    }
+    if (!s.map_id || typeof s.map_id !== 'string' || s.map_id.trim() === '') {
+      return { valid: false, error: `site[${i}].map_id 必须是非空字符串` };
+    }
+  }
+  return { valid: true };
+}
+
+function normalizeEquipMapIdList(eq) { 
   try { 
-    const list = Array.isArray(mapId) ? mapId : (typeof mapId !== 'undefined' && mapId !== null ? [mapId] : []); 
-    const out = []; 
-    for (const v of list) { const floor = extractFloorFromMapId(v); if (floor) out.push(String(floor).trim().toLowerCase()); } 
-    return Array.from(new Set(out)).filter(Boolean); 
+    const site = eq && eq.site;
+    const validation = validateSiteForRender(site);
+    if (!validation.valid) {
+      return [];
+    }
+    const mapIds = [];
+    for (const s of site) {
+      const floor = extractFloorFromMapId(s.map_id);
+      if (floor) mapIds.push(String(floor).trim().toLowerCase());
+    }
+    return Array.from(new Set(mapIds)).filter(Boolean);
   } catch (_) { return []; } 
 }
 
 function isEquipVisibleOnCurrentMap(eq) { 
   const currentFloorName = floorNames[currentFloorIndex] || null; 
   if (!currentFloorName) return true; 
-  const allowed = normalizeEquipMapIdList(eq && eq.map_id); 
-  if (!Array.isArray(allowed) || allowed.length === 0) return true; 
+  const allowed = normalizeEquipMapIdList(eq); 
+  if (!Array.isArray(allowed) || allowed.length === 0) return false; 
   return allowed.includes(String(currentFloorName).trim().toLowerCase()); 
 }
 

@@ -1,0 +1,31 @@
+{
+  "manufacturer": "SimEquip",
+  "type": "elevator",
+  "serial_number": "Elevator-01",
+  "vda_version": "v2",
+  "vda_full_version": "2.0.0",
+  "ip": "192.168.0.20",
+  "mqtt": {
+    "host": "192.168.189.206",
+    "port": 1884,
+    "vda_interface": "uequip"
+  },
+  "site": [
+    {
+      "x": 3.80,
+      "y": -1.89,
+      "theta": 0.0,
+      "floor_name": "floor_1_smap_content_1"
+    },
+    {
+      "x": 3.81,
+      "y": -1.89,
+      "theta": 1.57,
+      "floor_name": "floor_2_smap_content_1"
+    }
+  ],
+  "map_id": "floors-0311",
+  "state_frequency": 1,
+  "action_time": 3,
+  "trigger_mode": "instant"
+}

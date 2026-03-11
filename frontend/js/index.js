@@ -1,12 +1,12 @@
 window.onload = async function () {
   try { bindUiEvents(); } catch (_) {}
 
-  try { initCanvas(); } catch (_) {}
+  try { await initCanvas(); } catch (_) {}
   try { setupEventListeners(); } catch (_) {}
 
   try { await updateViewerMapOptions(); } catch (_) {}
   try { await applyHotConfigInitToFrontend(); } catch (_) {}
-  try { loadMapData(); } catch (_) {}
+  try { await loadMapData(); } catch (_) {}
 
   try { loadFrontendConfig(); } catch (_) {}
   try { loadSimSettingsCache(); } catch (_) {}

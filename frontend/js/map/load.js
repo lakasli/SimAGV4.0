@@ -47,6 +47,12 @@ async function loadMapData() {
     updateMapInfo();
     fitMapToView();
     drawMap();
+    if (window.SimViewer3D) {
+      const loader = window.SimViewer3D.getProductionLineLoader();
+      if (loader) {
+        loader.setCurrentMap(CURRENT_MAP_ID);
+      }
+    }
     document.getElementById('status').textContent = `地图加载完成: ${CURRENT_MAP_ID}`;
   } catch (err) {
     console.error('加载地图数据失败:', err);
@@ -109,6 +115,12 @@ function applyViewerMap() {
   if (!v) return;
   if (CURRENT_MAP_ID !== v) {
     CURRENT_MAP_ID = v;
+  }
+  if (window.SimViewer3D) {
+    const loader = window.SimViewer3D.getProductionLineLoader();
+    if (loader) {
+      loader.setCurrentMap(CURRENT_MAP_ID);
+    }
   }
   currentFloorIndex = 0;
   loadMapData();

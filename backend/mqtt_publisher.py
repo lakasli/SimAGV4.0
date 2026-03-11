@@ -6,14 +6,9 @@ from pathlib import Path
 from typing import Optional
 
 import paho.mqtt.client as mqtt
-try:
-    from SimVehicleSys.config.settings import get_config  # type: ignore
-except Exception:  # pragma: no cover
-    get_config = None  # type: ignore
-try:
-    from SimVehicleSys.utils.helpers import canonicalize_map_id  # type: ignore
-except Exception:  # pragma: no cover
-    canonicalize_map_id = None  # type: ignore
+
+get_config = None  # SimVehicleSys not available
+canonicalize_map_id = None  # SimVehicleSys not available
 
 from .schemas import AGVInfo, AGVRuntime
 from .schemas import SimSettingsPatch

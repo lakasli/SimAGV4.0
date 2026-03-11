@@ -1,0 +1,225 @@
+.production-line-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.production-line-container canvas {
+    display: block;
+}
+
+.pl-info-bubble {
+    position: absolute;
+    display: none;
+    background: rgba(30, 30, 50, 0.95);
+    border: 2px solid #4a90e2;
+    border-radius: 12px;
+    padding: 20px;
+    min-width: 260px;
+    max-width: 320px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.pl-info-bubble h3 {
+    color: #4a90e2;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.pl-info-bubble .status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.pl-info-bubble .status-label {
+    color: #a0a0b0;
+    font-size: 13px;
+}
+
+.pl-info-bubble .status-value {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.pl-info-bubble .status-value.red {
+    background: rgba(255, 68, 68, 0.2);
+    color: #ff4444;
+}
+
+.pl-info-bubble .status-value.yellow {
+    background: rgba(255, 200, 0, 0.2);
+    color: #ffc800;
+}
+
+.pl-info-bubble .status-value.green {
+    background: rgba(39, 174, 96, 0.2);
+    color: #27ae60;
+}
+
+.pl-info-bubble .stats-section {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.pl-info-bubble .stats-title {
+    color: #4a90e2;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.pl-info-bubble .stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.pl-info-bubble .stat-label {
+    color: #808090;
+}
+
+.pl-info-bubble .stat-value {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.pl-info-bubble .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #606070;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.pl-info-bubble .close-btn:hover {
+    color: #ffffff;
+}
+
+.pl-control-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    min-width: 280px;
+    backdrop-filter: blur(10px);
+}
+
+.pl-control-panel h2 {
+    margin-bottom: 20px;
+    color: #1a1a2e;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+}
+
+.pl-control-panel .control-group {
+    margin-bottom: 20px;
+}
+
+.pl-control-panel .control-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.pl-control-panel .control-group input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e0e0e0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.pl-control-panel .control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4a90e2;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(74, 144, 226, 0.4);
+}
+
+.pl-control-panel .control-group input[type="range"]::-webkit-slider-thumb:hover {
+    background: #357abd;
+}
+
+.pl-control-panel .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.pl-control-panel button {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pl-control-panel #pl-startBtn {
+    background: #4a90e2;
+    color: white;
+}
+
+.pl-control-panel #pl-startBtn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.pl-control-panel #pl-stopBtn {
+    background: #e74c3c;
+    color: white;
+}
+
+.pl-control-panel #pl-stopBtn:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.pl-control-panel .info-display {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #555;
+}
+
+.pl-control-panel .info-display p {
+    margin: 4px 0;
+}
+
+.pl-control-panel .info-display span {
+    font-weight: 600;
+    color: #4a90e2;
+}

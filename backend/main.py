@@ -23,22 +23,14 @@ from .sim_process_manager import SimulatorProcessManager
 from fastapi import WebSocket
 import asyncio
 from .websocket_manager import WebSocketManager
-try:
-    from SimVehicleSys.sim_vehicle.action_executor import execute_translation_movement, execute_rotation_movement  # type: ignore
-except Exception:  # pragma: no cover
-    execute_translation_movement = None  # type: ignore
-    execute_rotation_movement = None  # type: ignore
-try:
-    from SimVehicleSys.config.settings import get_config  # type: ignore
-except Exception:  # pragma: no cover
-    get_config = None  # type: ignore
+
+execute_translation_movement = None  # SimVehicleSys not available
+execute_rotation_movement = None  # SimVehicleSys not available
+get_config = None  # SimVehicleSys not available
 from .mqtt_bridge import MQTTBridge
 from .mqtt_publisher import MqttPublisher
 import json
-try:
-    from SimVehicleSys.protocol.vda_2_0_0.order import Order as VDAOrder  # type: ignore
-except Exception:  # pragma: no cover
-    VDAOrder = None  # type: ignore
+VDAOrder = None  # SimVehicleSys not available
 from .instance_file_store import InstanceFileStore
 
 project_root = Path(__file__).resolve().parents[1]
@@ -187,6 +179,10 @@ if shelf_dir.exists():
     app.mount("/shelf", StaticFiles(directory=str(shelf_dir)), name="shelf")
 if simagv_dir.exists():
     app.mount("/simagv", StaticFiles(directory=str(simagv_dir)), name="simagv")
+
+sim_equipment_dir = project_root / "SimEQU" / "devices"
+if sim_equipment_dir.exists():
+    app.mount("/SimEQU/devices", StaticFiles(directory=str(sim_equipment_dir)), name="simEquipment")
 
 # --- PM2 管理与 ecosystem 生成 ---
 #
@@ -343,7 +339,7 @@ def _pm2_namespace_processes(apps: list[Dict[str, Any]], namespace: str, mem_tot
                     if "Simulation_vehicle_example/" not in path_probe and "SimVehicleSys.main" not in args_probe:
                         continue
                 elif namespace == "equip":
-                    if "SimEquipment." not in args_probe:
+                    if "SimEQU.devices" not in args_probe:
                         continue
                 else:
                     continue
@@ -390,7 +386,7 @@ def _ps_list_processes(mem_total_bytes: int) -> tuple[list[Dict[str, Any]], list
         if proc.returncode != 0 or not proc.stdout:
             return agv_out, equip_out
         serial_re = re.compile(r"--serial\s+([A-Za-z0-9_-]+)")
-        equip_re = re.compile(r"SimEquipment\.([A-Za-z0-9_-]+)")
+        equip_re = re.compile(r"SimEQU\.devices\.([A-Za-z0-9_-]+)")
         for line in proc.stdout.splitlines():
             parts = line.strip().split(None, 3)
             if len(parts) < 4:
@@ -432,7 +428,7 @@ def _ps_list_processes(mem_total_bytes: int) -> tuple[list[Dict[str, Any]], list
                         }
                     )
                     continue
-            if "SimEquipment." in args:
+            if "SimEQU.devices" in args:
                 m = equip_re.search(args)
                 mod = m.group(1) if m else ""
                 if mod:
@@ -529,7 +525,7 @@ def _render_equip_block(dir_name: str) -> str:
         f"  name: \"equip-{safe}\",\n"
         f"  cwd: \"{str(project_root)}\",\n"
         f"  script: \"{PYTHON_BIN}\",\n"
-        f"  args: \"-m SimEquipment.{safe}\",\n"
+        f"  args: \"-m SimEQU.devices.{safe}.device\",\n"
         "  namespace: \"equip\",\n"
         "  env: { PYTHONUNBUFFERED: \"1\" },\n"
         "  autorestart: true,\n"
@@ -540,12 +536,12 @@ def _render_equip_block(dir_name: str) -> str:
     )
 
 def _discover_equip_dirs() -> list[str]:
-    eq_dir = project_root / "SimEquipment"
+    eq_dir = project_root / "SimEQU" / "devices"
     names: list[str] = []
     try:
         if eq_dir.exists():
             for p in eq_dir.iterdir():
-                if p.is_dir() and (p / "__main__.py").exists():
+                if p.is_dir() and (p / "device.py").exists():
                     names.append(p.name)
     except Exception:
         pass
@@ -572,7 +568,7 @@ def _write_ecosystem_files(agv_serials: list[str]) -> None:
 
 @app.get("/api/equipments")
 def list_equipments() -> List[dict]:
-    equipments_dir = project_root / "SimEquipment"
+    equipments_dir = project_root / "SimEQU" / "devices"
     items: List[dict] = []
     try:
         if equipments_dir.exists():
@@ -598,15 +594,6 @@ def list_equipments() -> List[dict]:
                             t = "light"
                         else:
                             t = "device"
-                    site_raw = data.get("site")
-                    if isinstance(site_raw, list):
-                        site_list = [str(x) for x in site_raw if x is not None]
-                    elif isinstance(site_raw, str):
-                        site_list = [site_raw]
-                    else:
-                        site_list = []
-                    if str(t).lower() != "door" and len(site_list) > 1:
-                        site_list = site_list[:1]
                     items.append({
                         "name": data.get("name"),
                         "type": t,
@@ -615,7 +602,7 @@ def list_equipments() -> List[dict]:
                         "vda_version": data.get("vda_version"),
                         "vda_full_version": data.get("vda_full_version"),
                         "ip": data.get("ip"),
-                        "site": site_list,
+                        "site": data.get("site", []),
                         "map_id": data.get("map_id"),
                         "state_frequency": data.get("state_frequency"),
                         "action_time": data.get("action_time"),
@@ -627,9 +614,10 @@ def list_equipments() -> List[dict]:
                         },
                         "dir_name": p.name,
                     })
-                except Exception:
-                    pass
-    except Exception:
+                except Exception as e:
+                    print(f"[API /api/equipments] 读取设备 {p.name} 配置失败: {e}")
+    except Exception as e:
+        print(f"[API /api/equipments] 遍历设备目录失败: {e}")
         items = []
     return items
 
@@ -655,18 +643,22 @@ def publish_equipment_instant(dir_name: str, body: dict = Body(...)):
 
 @app.get("/api/equipments/{dir_name}/config")
 def get_equipment_config(dir_name: str) -> dict:
-    equipments_dir = project_root / "SimEquipment"
+    equipments_dir = project_root / "SimEQU" / "devices"
     target = equipments_dir / dir_name / "config.json"
     if not target.exists():
+        print(f"[API /api/equipments/{{dir_name}}/config] 配置文件不存在: {target}")
         raise HTTPException(status_code=404, detail="Equipment config not found")
     try:
-        return json.loads(target.read_text(encoding="utf-8"))
+        config = json.loads(target.read_text(encoding="utf-8"))
+        print(f"[API /api/equipments/{{dir_name}}/config] 返回设备 {dir_name} 配置, site数量: {len(config.get('site', []))}, site内容: {config.get('site', [])}")
+        return config
     except Exception as e:
+        print(f"[API /api/equipments/{{dir_name}}/config] 读取配置失败: {e}")
         raise HTTPException(status_code=500, detail=f"Read config failed: {e}")
 
 @app.post("/api/equipments/{dir_name}/config")
 def update_equipment_config(dir_name: str, body: dict = Body(...)):
-    equipments_dir = project_root / "SimEquipment"
+    equipments_dir = project_root / "SimEQU" / "devices"
     target = equipments_dir / dir_name / "config.json"
     if not target.exists():
         raise HTTPException(status_code=404, detail="Equipment config not found")

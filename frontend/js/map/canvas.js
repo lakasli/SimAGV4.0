@@ -8,7 +8,7 @@ let isDragging = false;
 let lastMousePos = { x: 0, y: 0 };
 
 async function initCanvas() {
-  const initialized = SimViewer3D.init();
+  const initialized = await SimViewer3D.init();
   if (!initialized) {
     console.error('Failed to initialize 3D scene');
     return;
@@ -167,10 +167,15 @@ async function onMouseDown(e) {
     }
 
     if (obj.userData.type === 'agv') {
-      if (typeof selectedRobotId !== 'undefined') {
+      if (typeof selectRobot === 'function') {
+        selectRobot(obj.userData.agvId);
+        if (typeof scrollToRobotCard === 'function') {
+          scrollToRobotCard(obj.userData.agvId);
+        }
+      } else if (typeof selectedRobotId !== 'undefined') {
         selectedRobotId = obj.userData.agvId;
+        SimViewer3D.drawMap();
       }
-      SimViewer3D.drawMap();
       hideRobotContextMenu();
       return;
     }

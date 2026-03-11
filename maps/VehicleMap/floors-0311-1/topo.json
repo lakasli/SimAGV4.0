@@ -1,0 +1,3006 @@
+{
+    "header": {
+        "mapType": "2D-Map",
+        "mapName": "floors-0311-1",
+        "minPos": {
+            "x": -1.207,
+            "y": -10.328
+        },
+        "maxPos": {
+            "x": 12.753,
+            "y": 1.472
+        },
+        "resolution": 0.02,
+        "version": "1.0.6"
+    },
+    "advancedPointList": [
+        {
+            "className": "LocationMark",
+            "instanceName": "LM1",
+            "pos": {
+                "x": 3.807,
+                "y": -5.147
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        },
+        {
+            "className": "LocationMark",
+            "instanceName": "LM2",
+            "pos": {
+                "x": 3.807,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        },
+        {
+            "className": "ParkPoint",
+            "instanceName": "PP4",
+            "pos": {
+                "x": 8.565,
+                "y": -5.067
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        },
+        {
+            "className": "LocationMark",
+            "instanceName": "LM5",
+            "pos": {
+                "x": 3.807,
+                "y": -1.888
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        },
+        {
+            "className": "ActionPoint",
+            "instanceName": "AP6",
+            "pos": {
+                "x": 7.838,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        },
+        {
+            "className": "ChargePoint",
+            "instanceName": "CP7",
+            "pos": {
+                "x": 1.917,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "spin",
+                    "type": "bool",
+                    "value": "ZmFsc2U=",
+                    "boolValue": false
+                }
+            ],
+            "ignoreDir": true
+        }
+    ],
+    "advancedLineList": [
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.396,
+                    "y": -10.199
+                },
+                "endPos": {
+                    "x": 10.049,
+                    "y": -10.201
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OS4yMjM=",
+                    "doubleValue": 9.223
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjE=",
+                    "doubleValue": -10.1
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.305,
+                    "y": -9.527
+                },
+                "endPos": {
+                    "x": 10.78,
+                    "y": -9.524
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuNTQy",
+                    "doubleValue": 10.542
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTkuNDI2",
+                    "doubleValue": -9.426
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.024,
+                    "y": -5.746
+                },
+                "endPos": {
+                    "x": 11.026,
+                    "y": -5.588
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTI1",
+                    "doubleValue": 10.925
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTUuNjY2",
+                    "doubleValue": -5.666
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.394,
+                    "y": -6.273
+                },
+                "endPos": {
+                    "x": 0.542,
+                    "y": -6.38
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MC41Mjc=",
+                    "doubleValue": 0.527
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuMjQ1",
+                    "doubleValue": -6.245
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.867,
+                    "y": -10.184
+                },
+                "endPos": {
+                    "x": 7.583,
+                    "y": -10.192
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ni4yMjU=",
+                    "doubleValue": 6.225
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjA4OA==",
+                    "doubleValue": -10.088
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.131,
+                    "y": -9.467
+                },
+                "endPos": {
+                    "x": 11.263,
+                    "y": -9.507
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuMjI2",
+                    "doubleValue": 11.226
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTkuMzkx",
+                    "doubleValue": -9.391
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 6.184,
+                    "y": -0.626
+                },
+                "endPos": {
+                    "x": 6.19,
+                    "y": 0.173
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ni4wODc=",
+                    "doubleValue": 6.087
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuMjI2",
+                    "doubleValue": -0.226
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.355,
+                    "y": -3.187
+                },
+                "endPos": {
+                    "x": 10.364,
+                    "y": -2.868
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuMjY=",
+                    "doubleValue": 10.26
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuMDI1",
+                    "doubleValue": -3.025
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.158,
+                    "y": -6.825
+                },
+                "endPos": {
+                    "x": 10.162,
+                    "y": -6.707
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuMDY=",
+                    "doubleValue": 10.06
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNzYz",
+                    "doubleValue": -6.763
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.1,
+                    "y": -10.187
+                },
+                "endPos": {
+                    "x": 0.862,
+                    "y": -10.185
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MC40ODE=",
+                    "doubleValue": 0.481
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjA4Ng==",
+                    "doubleValue": -10.086
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.775,
+                    "y": -2.706
+                },
+                "endPos": {
+                    "x": 4.749,
+                    "y": -2.612
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC44NTg=",
+                    "doubleValue": 4.858
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuNjMy",
+                    "doubleValue": -2.632
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.779,
+                    "y": -6.706
+                },
+                "endPos": {
+                    "x": 4.771,
+                    "y": -6.388
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC44NzU=",
+                    "doubleValue": 4.875
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNTQ0",
+                    "doubleValue": -6.544
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.062,
+                    "y": -3.825
+                },
+                "endPos": {
+                    "x": 11.076,
+                    "y": -3.508
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTY5",
+                    "doubleValue": 10.969
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuNjYy",
+                    "doubleValue": -3.662
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.633,
+                    "y": -5.266
+                },
+                "endPos": {
+                    "x": 10.633,
+                    "y": -5.108
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuNzMz",
+                    "doubleValue": 10.733
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTUuMTg3",
+                    "doubleValue": -5.187
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.865,
+                    "y": -10.175
+                },
+                "endPos": {
+                    "x": 4.011,
+                    "y": -10.183
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Mi40Mzg=",
+                    "doubleValue": 2.438
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjA3OQ==",
+                    "doubleValue": -10.079
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.275,
+                    "y": -7.155
+                },
+                "endPos": {
+                    "x": 11.421,
+                    "y": -7.113
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuMzI=",
+                    "doubleValue": 11.32
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTcuMDM4",
+                    "doubleValue": -7.038
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.012,
+                    "y": -8.466
+                },
+                "endPos": {
+                    "x": 11.013,
+                    "y": -8.311
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTEz",
+                    "doubleValue": 10.913
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTguMzg4",
+                    "doubleValue": -8.388
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.745,
+                    "y": -10.242
+                },
+                "endPos": {
+                    "x": 8.383,
+                    "y": -10.251
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC4wNjU=",
+                    "doubleValue": 8.065
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjE0Nw==",
+                    "doubleValue": -10.147
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.773,
+                    "y": -3.828
+                },
+                "endPos": {
+                    "x": 4.766,
+                    "y": -3.667
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC44Njk=",
+                    "doubleValue": 4.869
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuNzQz",
+                    "doubleValue": -3.743
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.069,
+                    "y": -10.251
+                },
+                "endPos": {
+                    "x": 4.846,
+                    "y": -10.255
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC40NTg=",
+                    "doubleValue": 4.458
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjE1Mw==",
+                    "doubleValue": -10.153
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.973,
+                    "y": -4.916
+                },
+                "endPos": {
+                    "x": 0.954,
+                    "y": -4.788
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wNjI=",
+                    "doubleValue": 1.062
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuODM3",
+                    "doubleValue": -4.837
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.78,
+                    "y": -7.931
+                },
+                "endPos": {
+                    "x": 8.839,
+                    "y": -7.837
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC43MjU=",
+                    "doubleValue": 8.725
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTcuODMx",
+                    "doubleValue": -7.831
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 9.511,
+                    "y": -7.885
+                },
+                "endPos": {
+                    "x": 9.665,
+                    "y": -7.968
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OS42MzU=",
+                    "doubleValue": 9.635
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTcuODM4",
+                    "doubleValue": -7.838
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.822,
+                    "y": -4.624
+                },
+                "endPos": {
+                    "x": 0.819,
+                    "y": -4.311
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MC45Mg==",
+                    "doubleValue": 0.92
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuNDY3",
+                    "doubleValue": -4.467
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.113,
+                    "y": -0.303
+                },
+                "endPos": {
+                    "x": 4.1,
+                    "y": 0.01
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC4yMDY=",
+                    "doubleValue": 4.206
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuMTQy",
+                    "doubleValue": -0.142
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.705,
+                    "y": -6.646
+                },
+                "endPos": {
+                    "x": 0.865,
+                    "y": -6.647
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MC43ODY=",
+                    "doubleValue": 0.786
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNTQ3",
+                    "doubleValue": -6.547
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.48,
+                    "y": -4.626
+                },
+                "endPos": {
+                    "x": 11.5,
+                    "y": -4.468
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuMzkx",
+                    "doubleValue": 11.391
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuNTM0",
+                    "doubleValue": -4.534
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.606,
+                    "y": -4.31
+                },
+                "endPos": {
+                    "x": 11.661,
+                    "y": -4.162
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuNTQ=",
+                    "doubleValue": 11.54
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuMjAx",
+                    "doubleValue": -4.201
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 6.94,
+                    "y": -3.978
+                },
+                "endPos": {
+                    "x": 6.881,
+                    "y": -3.832
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ny4wMDM=",
+                    "doubleValue": 7.003
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuODY4",
+                    "doubleValue": -3.868
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.927,
+                    "y": -4.464
+                },
+                "endPos": {
+                    "x": 0.921,
+                    "y": -4.308
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wMjQ=",
+                    "doubleValue": 1.024
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuMzgy",
+                    "doubleValue": -4.382
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.781,
+                    "y": -7.187
+                },
+                "endPos": {
+                    "x": 4.778,
+                    "y": -7.027
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC44Nzk=",
+                    "doubleValue": 4.879
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTcuMTA1",
+                    "doubleValue": -7.105
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 1.032,
+                    "y": -5.446
+                },
+                "endPos": {
+                    "x": 1.136,
+                    "y": -5.527
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4xNDU=",
+                    "doubleValue": 1.145
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTUuNDA4",
+                    "doubleValue": -5.408
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.443,
+                    "y": -6.538
+                },
+                "endPos": {
+                    "x": 0.529,
+                    "y": -6.612
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MC41NTE=",
+                    "doubleValue": 0.551
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNDk5",
+                    "doubleValue": -6.499
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.772,
+                    "y": -6.386
+                },
+                "endPos": {
+                    "x": 4.773,
+                    "y": -6.227
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC42NzM=",
+                    "doubleValue": 4.673
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuMzA2",
+                    "doubleValue": -6.306
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 3.923,
+                    "y": -10.233
+                },
+                "endPos": {
+                    "x": 4.051,
+                    "y": -10.27
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC4wMTU=",
+                    "doubleValue": 4.015
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEwLjE1NQ==",
+                    "doubleValue": -10.155
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.952,
+                    "y": -9.261
+                },
+                "endPos": {
+                    "x": 0.942,
+                    "y": -8.95
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wNDc=",
+                    "doubleValue": 1.047
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTkuMTAy",
+                    "doubleValue": -9.102
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.023,
+                    "y": -8.625
+                },
+                "endPos": {
+                    "x": 11.015,
+                    "y": -8.468
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuMTE5",
+                    "doubleValue": 11.119
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTguNTQx",
+                    "doubleValue": -8.541
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.076,
+                    "y": -6.866
+                },
+                "endPos": {
+                    "x": 11.096,
+                    "y": -6.439
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTg2",
+                    "doubleValue": 10.986
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNjQ4",
+                    "doubleValue": -6.648
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 2.248,
+                    "y": -2.703
+                },
+                "endPos": {
+                    "x": 2.169,
+                    "y": -2.548
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Mi4yOTg=",
+                    "doubleValue": 2.298
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuNTg=",
+                    "doubleValue": -2.58
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.997,
+                    "y": -8.47
+                },
+                "endPos": {
+                    "x": 0.937,
+                    "y": -8.312
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "LTE=",
+                    "doubleValue": -1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wNg==",
+                    "doubleValue": 1.06
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTguMzU1",
+                    "doubleValue": -8.355
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 1.985,
+                    "y": -2.036
+                },
+                "endPos": {
+                    "x": 2.036,
+                    "y": -2.032
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Mi4wMTg=",
+                    "doubleValue": 2.018
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuMTM0",
+                    "doubleValue": -2.134
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.105,
+                    "y": -3.497
+                },
+                "endPos": {
+                    "x": 11.552,
+                    "y": -3.498
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuMzI4",
+                    "doubleValue": 11.328
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuNTk3",
+                    "doubleValue": -3.597
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 1.345,
+                    "y": 1.438
+                },
+                "endPos": {
+                    "x": 2.76,
+                    "y": 1.452
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Mi4wNTM=",
+                    "doubleValue": 2.053
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4zNDU=",
+                    "doubleValue": 1.345
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 5.842,
+                    "y": 1.336
+                },
+                "endPos": {
+                    "x": 6.133,
+                    "y": 1.33
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NS45ODU=",
+                    "doubleValue": 5.985
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4yMzM=",
+                    "doubleValue": 1.233
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.067,
+                    "y": -3.524
+                },
+                "endPos": {
+                    "x": 10.969,
+                    "y": -3.354
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTMx",
+                    "doubleValue": 10.931
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTMuNDg5",
+                    "doubleValue": -3.489
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.323,
+                    "y": -0.347
+                },
+                "endPos": {
+                    "x": 10.462,
+                    "y": -0.381
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuMzY5",
+                    "doubleValue": 10.369
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuNDYx",
+                    "doubleValue": -0.461
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.106,
+                    "y": -0.624
+                },
+                "endPos": {
+                    "x": 4.11,
+                    "y": -0.469
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC4yMDg=",
+                    "doubleValue": 4.208
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuNTQ5",
+                    "doubleValue": -0.549
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.584,
+                    "y": -1.271
+                },
+                "endPos": {
+                    "x": 8.675,
+                    "y": -1.188
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC42OTc=",
+                    "doubleValue": 8.697
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuMzAz",
+                    "doubleValue": -1.303
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.947,
+                    "y": -8.305
+                },
+                "endPos": {
+                    "x": 0.952,
+                    "y": -6.708
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wNDk=",
+                    "doubleValue": 1.049
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTcuNTA3",
+                    "doubleValue": -7.507
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.165,
+                    "y": 1.453
+                },
+                "endPos": {
+                    "x": 5.75,
+                    "y": 1.463
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC45NTg=",
+                    "doubleValue": 4.958
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4zNTg=",
+                    "doubleValue": 1.358
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.9,
+                    "y": 1.143
+                },
+                "endPos": {
+                    "x": 1.012,
+                    "y": 1.255
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wMjc=",
+                    "doubleValue": 1.027
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4xMjg=",
+                    "doubleValue": 1.128
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.508,
+                    "y": -1.281
+                },
+                "endPos": {
+                    "x": 10.618,
+                    "y": -1.336
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuNTE4",
+                    "doubleValue": 10.518
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuMzk4",
+                    "doubleValue": -1.398
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 12.703,
+                    "y": -6.835
+                },
+                "endPos": {
+                    "x": 12.689,
+                    "y": -6.613
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTIuNTk2",
+                    "doubleValue": 12.596
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTYuNzM=",
+                    "doubleValue": -6.73
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 3.585,
+                    "y": -0.74
+                },
+                "endPos": {
+                    "x": 4.064,
+                    "y": -0.739
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "My44MjU=",
+                    "doubleValue": 3.825
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuODM5",
+                    "doubleValue": -0.839
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.441,
+                    "y": -1.416
+                },
+                "endPos": {
+                    "x": 8.547,
+                    "y": -1.367
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC41MzY=",
+                    "doubleValue": 8.536
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuNDgy",
+                    "doubleValue": -1.482
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.463,
+                    "y": -1.424
+                },
+                "endPos": {
+                    "x": 7.509,
+                    "y": -1.268
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ny41ODI=",
+                    "doubleValue": 7.582
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuMzc0",
+                    "doubleValue": -1.374
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.104,
+                    "y": -1.414
+                },
+                "endPos": {
+                    "x": 7.019,
+                    "y": -1.326
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ni45OQ==",
+                    "doubleValue": 6.99
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuNDM5",
+                    "doubleValue": -1.439
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.439,
+                    "y": -4.623
+                },
+                "endPos": {
+                    "x": 11.557,
+                    "y": -4.736
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTEuNDI5",
+                    "doubleValue": 11.429
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTQuNzUy",
+                    "doubleValue": -4.752
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.11,
+                    "y": -2.873
+                },
+                "endPos": {
+                    "x": 7.261,
+                    "y": -2.795
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ny4yMzE=",
+                    "doubleValue": 7.231
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuOTIz",
+                    "doubleValue": -2.923
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.392,
+                    "y": -2.608
+                },
+                "endPos": {
+                    "x": 8.498,
+                    "y": -2.537
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC41MDE=",
+                    "doubleValue": 8.501
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuNjU2",
+                    "doubleValue": -2.656
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.589,
+                    "y": -2.049
+                },
+                "endPos": {
+                    "x": 7.753,
+                    "y": -1.923
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ny43MzI=",
+                    "doubleValue": 7.732
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuMDY1",
+                    "doubleValue": -2.065
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 10.356,
+                    "y": -2.546
+                },
+                "endPos": {
+                    "x": 10.348,
+                    "y": -2.389
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuMjUy",
+                    "doubleValue": 10.252
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuNDcz",
+                    "doubleValue": -2.473
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.911,
+                    "y": -2.269
+                },
+                "endPos": {
+                    "x": 9.013,
+                    "y": -2.22
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OS4wMDU=",
+                    "doubleValue": 9.005
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuMzM1",
+                    "doubleValue": -2.335
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 0.938,
+                    "y": -8.623
+                },
+                "endPos": {
+                    "x": 1.01,
+                    "y": -8.471
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4wNjQ=",
+                    "doubleValue": 1.064
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTguNTk=",
+                    "doubleValue": -8.59
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 6.184,
+                    "y": 0.177
+                },
+                "endPos": {
+                    "x": 6.209,
+                    "y": 0.318
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ni4yOTU=",
+                    "doubleValue": 6.295
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MC4yMw==",
+                    "doubleValue": 0.23
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 6.309,
+                    "y": -2.212
+                },
+                "endPos": {
+                    "x": 6.443,
+                    "y": -2.132
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "Ni40Mjc=",
+                    "doubleValue": 6.427
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTIuMjU4",
+                    "doubleValue": -2.258
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 7.909,
+                    "y": 1.462
+                },
+                "endPos": {
+                    "x": 8.215,
+                    "y": 1.458
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC4wNjE=",
+                    "doubleValue": 8.061
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4zNg==",
+                    "doubleValue": 1.36
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 1.021,
+                    "y": -5.72
+                },
+                "endPos": {
+                    "x": 1.131,
+                    "y": -5.61
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS4xNDc=",
+                    "doubleValue": 1.147
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTUuNzM2",
+                    "doubleValue": -5.736
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 8.223,
+                    "y": 0.282
+                },
+                "endPos": {
+                    "x": 8.363,
+                    "y": 0.195
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "OC4yNA==",
+                    "doubleValue": 8.24
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MC4xNTQ=",
+                    "doubleValue": 0.154
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 1.359,
+                    "y": -1.261
+                },
+                "endPos": {
+                    "x": 1.466,
+                    "y": -1.134
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MS40ODk=",
+                    "doubleValue": 1.489
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTEuMjYy",
+                    "doubleValue": -1.262
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 3.422,
+                    "y": -0.744
+                },
+                "endPos": {
+                    "x": 3.583,
+                    "y": -0.757
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "My40OTQ=",
+                    "doubleValue": 3.494
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTAuODU=",
+                    "doubleValue": -0.85
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 11.05,
+                    "y": -8.787
+                },
+                "endPos": {
+                    "x": 11.01,
+                    "y": -8.633
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "MTAuOTMz",
+                    "doubleValue": 10.933
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "LTguNzM1",
+                    "doubleValue": -8.735
+                }
+            ]
+        },
+        {
+            "className": "FeatureLine",
+            "instanceName": "0",
+            "line": {
+                "startPos": {
+                    "x": 4.074,
+                    "y": 1.37
+                },
+                "endPos": {
+                    "x": 4.204,
+                    "y": 1.466
+                }
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "double",
+                    "value": "MQ==",
+                    "doubleValue": 1
+                },
+                {
+                    "key": "directionPosX",
+                    "type": "double",
+                    "value": "NC4xOTg=",
+                    "doubleValue": 4.198
+                },
+                {
+                    "key": "directionPosY",
+                    "type": "double",
+                    "value": "MS4zMzg=",
+                    "doubleValue": 1.338
+                }
+            ]
+        }
+    ],
+    "advancedCurveList": [
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM5-LM1",
+            "startPos": {
+                "instanceName": "LM5",
+                "pos": {
+                    "x": 3.807,
+                    "y": -1.888
+                }
+            },
+            "endPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "controlPos1": {
+                "x": 3.807,
+                "y": -2.974
+            },
+            "controlPos2": {
+                "x": 3.807,
+                "y": -4.061
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM1-LM5",
+            "startPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "endPos": {
+                "instanceName": "LM5",
+                "pos": {
+                    "x": 3.807,
+                    "y": -1.888
+                }
+            },
+            "controlPos1": {
+                "x": 3.807,
+                "y": -4.061
+            },
+            "controlPos2": {
+                "x": 3.807,
+                "y": -2.974
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM1-LM2",
+            "startPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "endPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "controlPos1": {
+                "x": 3.807,
+                "y": -6.403
+            },
+            "controlPos2": {
+                "x": 3.807,
+                "y": -7.658
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM2-LM1",
+            "startPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "endPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "controlPos1": {
+                "x": 3.807,
+                "y": -7.658
+            },
+            "controlPos2": {
+                "x": 3.807,
+                "y": -6.403
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM2-AP6",
+            "startPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "endPos": {
+                "instanceName": "AP6",
+                "pos": {
+                    "x": 7.838,
+                    "y": -8.914
+                }
+            },
+            "controlPos1": {
+                "x": 5.151,
+                "y": -8.914
+            },
+            "controlPos2": {
+                "x": 6.494,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "AP6-LM2",
+            "startPos": {
+                "instanceName": "AP6",
+                "pos": {
+                    "x": 7.838,
+                    "y": -8.914
+                }
+            },
+            "endPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "controlPos1": {
+                "x": 6.494,
+                "y": -8.914
+            },
+            "controlPos2": {
+                "x": 5.151,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM1-PP4",
+            "startPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "endPos": {
+                "instanceName": "PP4",
+                "pos": {
+                    "x": 8.565,
+                    "y": -5.067
+                }
+            },
+            "controlPos1": {
+                "x": 5.393,
+                "y": -5.12
+            },
+            "controlPos2": {
+                "x": 6.979,
+                "y": -5.094
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "PP4-LM1",
+            "startPos": {
+                "instanceName": "PP4",
+                "pos": {
+                    "x": 8.565,
+                    "y": -5.067
+                }
+            },
+            "endPos": {
+                "instanceName": "LM1",
+                "pos": {
+                    "x": 3.807,
+                    "y": -5.147
+                }
+            },
+            "controlPos1": {
+                "x": 6.979,
+                "y": -5.094
+            },
+            "controlPos2": {
+                "x": 5.393,
+                "y": -5.12
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "CP7-LM2",
+            "startPos": {
+                "instanceName": "CP7",
+                "pos": {
+                    "x": 1.917,
+                    "y": -8.914
+                }
+            },
+            "endPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "controlPos1": {
+                "x": 2.547,
+                "y": -8.914
+            },
+            "controlPos2": {
+                "x": 3.177,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        },
+        {
+            "className": "DegenerateBezier",
+            "instanceName": "LM2-CP7",
+            "startPos": {
+                "instanceName": "LM2",
+                "pos": {
+                    "x": 3.807,
+                    "y": -8.914
+                }
+            },
+            "endPos": {
+                "instanceName": "CP7",
+                "pos": {
+                    "x": 1.917,
+                    "y": -8.914
+                }
+            },
+            "controlPos1": {
+                "x": 3.177,
+                "y": -8.914
+            },
+            "controlPos2": {
+                "x": 2.547,
+                "y": -8.914
+            },
+            "property": [
+                {
+                    "key": "direction",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                },
+                {
+                    "key": "movestyle",
+                    "type": "int",
+                    "value": "MA==",
+                    "int32Value": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "info_type": "PRODUCTION_LINE_STATE",
+  "info_description": "STATE",
+  "info_level": "INFO",
+  "references_by_state": {
+    "running": [
+      { "reference_key": "name", "reference_value": "state" },
+      { "reference_key": "value", "reference_value": "state:running" }
+    ],
+    "stopped": [
+      { "reference_key": "name", "reference_value": "state" },
+      { "reference_key": "value", "reference_value": "state:stopped" }
+    ],
+    "fault": [
+      { "reference_key": "name", "reference_value": "state" },
+      { "reference_key": "value", "reference_value": "state:fault" }
+    ]
+  }
+}

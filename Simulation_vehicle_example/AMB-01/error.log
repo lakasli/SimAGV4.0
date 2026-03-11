@@ -1,0 +1,2 @@
+2026-03-10T08:03:40.435Z warn: mqtt_connect_failed host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 tid=127163777562432
+2026-03-10T08:30:18.731Z warn: mqtt_connect_failed host=127.0.0.1 port=1883 clientId=simagv_runtime_AMB-01 tid=139092097705792

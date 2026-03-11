@@ -1,0 +1,2628 @@
+[
+    {
+        "scale": 0.66,
+        "origin": {
+            "x": 0,
+            "y": 0
+        },
+        "robotGroups": [
+            {
+                "id": "229a4d6",
+                "label": "RG229a4d6",
+                "robots": []
+            }
+        ],
+        "robotLabels": [],
+        "robots": [],
+        "points": [
+            {
+                "id": "10000001",
+                "name": "LM1",
+                "x": 3.804,
+                "y": -5.149,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            },
+            {
+                "id": "10000002",
+                "name": "LM2",
+                "x": 3.804,
+                "y": -8.918,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            },
+            {
+                "id": "11000004",
+                "name": "PP4",
+                "x": 8.564,
+                "y": -5.068,
+                "type": 14,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "robots": [],
+                "enabled": 1
+            },
+            {
+                "id": "10000005",
+                "name": "LM5",
+                "x": 3.804,
+                "y": -1.892,
+                "type": 11,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "1998661793706377218"
+            },
+            {
+                "id": "14000006",
+                "name": "AP6",
+                "x": 7.834,
+                "y": -8.915,
+                "type": 15,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "associatedStorageLocations": [
+                    "A68ebe692_AP6_1"
+                ]
+            },
+            {
+                "id": "17000007",
+                "name": "CP7",
+                "x": 1.913,
+                "y": -8.915,
+                "type": 13,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "robots": [],
+                "enabled": 1
+            },
+            {
+                "id": "10000008",
+                "name": "LM8",
+                "x": 1.913,
+                "y": -5.123,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            }
+        ],
+        "routes": [
+            {
+                "id": "1000000510000001",
+                "desc": "LM5-LM1",
+                "from": "10000005",
+                "to": "10000001",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.804,
+                    "y": -2.976
+                },
+                "c2": {
+                    "x": 3.804,
+                    "y": -4.062
+                }
+            },
+            {
+                "id": "1000000110000005",
+                "desc": "LM1-LM5",
+                "from": "10000001",
+                "to": "10000005",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.804,
+                    "y": -4.062
+                },
+                "c2": {
+                    "x": 3.804,
+                    "y": -2.976
+                }
+            },
+            {
+                "id": "1000000110000002",
+                "desc": "LM1-LM2",
+                "from": "10000001",
+                "to": "10000002",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.804,
+                    "y": -6.405
+                },
+                "c2": {
+                    "x": 3.804,
+                    "y": -7.662
+                }
+            },
+            {
+                "id": "1000000210000001",
+                "desc": "LM2-LM1",
+                "from": "10000002",
+                "to": "10000001",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.804,
+                    "y": -7.662
+                },
+                "c2": {
+                    "x": 3.804,
+                    "y": -6.405
+                }
+            },
+            {
+                "id": "1000000214000006",
+                "desc": "LM2-AP6",
+                "from": "10000002",
+                "to": "14000006",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 5.148,
+                    "y": -8.918
+                },
+                "c2": {
+                    "x": 6.492,
+                    "y": -8.915
+                }
+            },
+            {
+                "id": "1400000610000002",
+                "desc": "AP6-LM2",
+                "from": "14000006",
+                "to": "10000002",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 6.492,
+                    "y": -8.915
+                },
+                "c2": {
+                    "x": 5.148,
+                    "y": -8.918
+                }
+            },
+            {
+                "id": "1000000111000004",
+                "desc": "LM1-PP4",
+                "from": "10000001",
+                "to": "11000004",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 5.389,
+                    "y": -5.123
+                },
+                "c2": {
+                    "x": 6.977,
+                    "y": -5.096
+                }
+            },
+            {
+                "id": "1100000410000001",
+                "desc": "PP4-LM1",
+                "from": "11000004",
+                "to": "10000001",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 6.977,
+                    "y": -5.096
+                },
+                "c2": {
+                    "x": 5.389,
+                    "y": -5.123
+                }
+            },
+            {
+                "id": "1700000710000002",
+                "desc": "CP7-LM2",
+                "from": "17000007",
+                "to": "10000002",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 2.545,
+                    "y": -8.915
+                },
+                "c2": {
+                    "x": 3.173,
+                    "y": -8.918
+                }
+            },
+            {
+                "id": "1000000217000007",
+                "desc": "LM2-CP7",
+                "from": "10000002",
+                "to": "17000007",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.173,
+                    "y": -8.918
+                },
+                "c2": {
+                    "x": 2.545,
+                    "y": -8.915
+                }
+            },
+            {
+                "id": "1000000810000001",
+                "desc": "LM8-LM1",
+                "from": "10000008",
+                "to": "10000001",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 2.545,
+                    "y": -5.135
+                },
+                "c2": {
+                    "x": 3.173,
+                    "y": -5.14
+                }
+            },
+            {
+                "id": "1000000110000008",
+                "desc": "LM1-LM8",
+                "from": "10000001",
+                "to": "10000008",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.173,
+                    "y": -5.14
+                },
+                "c2": {
+                    "x": 2.545,
+                    "y": -5.135
+                }
+            }
+        ],
+        "areas": [
+            {
+                "id": "68ebe692",
+                "name": "A68ebe692",
+                "x": 544.598,
+                "y": 846.398,
+                "w": 174.496,
+                "h": 208.798,
+                "type": 1,
+                "config": {},
+                "routes": [],
+                "doorDeviceId": "",
+                "points": [
+                    "AP6"
+                ],
+                "storageLocations": [
+                    {
+                        "AP6": [
+                            "A68ebe692_AP6_1"
+                        ]
+                    }
+                ],
+                "inoutflag": 2
+            }
+        ],
+        "blocks": "",
+        "colorConfig": {
+            "point": {
+                "small": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": {
+                        "1": "#14D1A5",
+                        "2": "#69C6F5",
+                        "3": "#E48B1D",
+                        "4": "#E48B1D",
+                        "5": "#a72b69",
+                        "6": "#E63A3A",
+                        "7": "#db0d66"
+                    }
+                },
+                "large": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214",
+                    "strokeOccupied": "#ff4d4f",
+                    "strokeUnoccupied": "#52c41a",
+                    "strokeEmpty": "#1890ff",
+                    "strokeDisabled": "#bfbfbf",
+                    "strokeEnabled": "#52c41a",
+                    "strokeLocked": "#faad14",
+                    "strokeUnlocked": "#52c41a"
+                },
+                "types": {
+                    "1": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#14D1A5"
+                    },
+                    "2": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#69C6F5"
+                    },
+                    "3": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#E48B1D"
+                    },
+                    "4": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#E48B1D"
+                    },
+                    "5": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#a72b69"
+                    },
+                    "7": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#14D1A5"
+                    },
+                    "11": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "12": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "13": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "14": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "15": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "16": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    }
+                }
+            },
+            "route": {
+                "strokeActive": "#EBB214",
+                "strokeNone": "#8C8C8C",
+                "strokeEmpty": "#52C41A",
+                "strokeLoaded": "#1982F3",
+                "strokeForbidden": "#E63A3A",
+                "width": {
+                    "normal": 2,
+                    "active": 3
+                }
+            },
+            "area": {
+                "strokeActive": "#EBB214",
+                "stroke": {
+                    "1": "#9ACDFF99",
+                    "11": "#FF535399",
+                    "12": "#0DBB8A99",
+                    "13": "#e61e4aad",
+                    "14": "#FFD70099",
+                    "15": "transparent"
+                },
+                "fill": {
+                    "1": "#9ACDFF33",
+                    "11": "#FF9A9A33",
+                    "12": "#0DBB8A33",
+                    "13": "#e61e4a33",
+                    "14": "#FFD70033",
+                    "15": "transparent"
+                },
+                "border": {
+                    "width": 1,
+                    "opacity": 0.15,
+                    "colors": {
+                        "1": "#1890FF",
+                        "11": "#FF4D4F",
+                        "12": "#52C41A",
+                        "13": "#FA8C16",
+                        "14": "#722ED1",
+                        "15": "transparent"
+                    }
+                },
+                "types": {
+                    "1": {
+                        "stroke": "#9ACDFF99",
+                        "strokeActive": "#EBB214",
+                        "fill": "#9ACDFF33",
+                        "borderColor": "#1890FF",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "11": {
+                        "stroke": "#FF535399",
+                        "strokeActive": "#EBB214",
+                        "fill": "#FF9A9A33",
+                        "borderColor": "#FF4D4F",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "12": {
+                        "stroke": "#0DBB8A99",
+                        "strokeActive": "#EBB214",
+                        "fill": "#0DBB8A33",
+                        "borderColor": "#52C41A",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "13": {
+                        "stroke": "#e61e4aad",
+                        "strokeActive": "#EBB214",
+                        "fill": "#e61e4a33",
+                        "borderColor": "#FA8C16",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "14": {
+                        "stroke": "#FFD70099",
+                        "strokeActive": "#EBB214",
+                        "fill": "#FFD70033",
+                        "borderColor": "#722ED1",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "15": {
+                        "stroke": "transparent",
+                        "strokeActive": "transparent",
+                        "fill": "transparent",
+                        "borderColor": "transparent",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.22
+                    }
+                }
+            },
+            "robot": {
+                "stroke": "#01FDAF99",
+                "fill": "#01FAAD33",
+                "line": "#01fdaf",
+                "strokeNormal": "#01FDAF99",
+                "fillNormal": "#01FAAD33",
+                "strokeWarning": "#FF851B99",
+                "fillWarning": "#FF851B33",
+                "strokeFault": "#FF4D4F99",
+                "fillFault": "#FF4D4F33",
+                "imageWidth": 42,
+                "imageHeight": 76,
+                "customImages": {},
+                "useCustomImages": false
+            },
+            "storage": {
+                "occupied": "#ff4d4f",
+                "available": "#52c41a",
+                "default": "#f5f5f5",
+                "locked": "#faad14",
+                "moreButton": {
+                    "background": "#e6f4ff",
+                    "border": "#1677ff",
+                    "text": "#1677ff"
+                }
+            },
+            "autoDoor": {
+                "strokeClosed": "#FF4D4F99",
+                "fillClosed": "#FF4D4F33",
+                "strokeOpen": "#1890FF99",
+                "fillOpen": "#1890FF33"
+            },
+            "common": {
+                "color": "#595959",
+                "background": "#F0F2F5"
+            }
+        },
+        "id": 1765531813,
+        "setting": "",
+        "ratio": 100,
+        "name": "floor_1_smap_content_1",
+        "width": 13.96,
+        "height": 11.799999999999999,
+        "floors": 1,
+        "binLocationsList": [
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-1",
+                        "pointName": "AP155",
+                        "pos": {
+                            "x": -1.137,
+                            "y": -23.307
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-1.287,\"y\":-23.456999999999997},{\"x\":-0.9870000000000002,\"y\":-23.456999999999997},{\"x\":-0.9870000000000002,\"y\":-23.156999999999996},{\"x\":-1.287,\"y\":-23.156999999999996}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-2",
+                        "pointName": "AP154",
+                        "pos": {
+                            "x": 0.619,
+                            "y": -23.355
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":0.4689999999999999,\"y\":-23.505},{\"x\":0.769,\"y\":-23.505},{\"x\":0.769,\"y\":-23.205},{\"x\":0.4689999999999999,\"y\":-23.205}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-3",
+                        "pointName": "AP529",
+                        "pos": {
+                            "x": 2.354,
+                            "y": -23.355
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":2.204,\"y\":-23.505},{\"x\":2.504,\"y\":-23.505},{\"x\":2.504,\"y\":-23.205},{\"x\":2.204,\"y\":-23.205}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"HrLoad\": {\n            \"height\": 0.05,\n            \"loadType\": \"1\",\n            \"loadid\": \"00000015\",\n            \"operation\": \"Forkload\"\n        }\n    },\n    {\n        \"HrUnload\": {\n            \"height\": 0,\n            \"operation\": \"ForkUnload\"\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-1",
+                        "pointName": "AP585",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-31.188000000000002},{\"x\":-10.504000000000001,\"y\":-31.188000000000002},{\"x\":-10.504000000000001,\"y\":-30.888},{\"x\":-10.804,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-1",
+                        "pointName": "AP542",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-31.188000000000002},{\"x\":-6.513999999999999,\"y\":-31.188000000000002},{\"x\":-6.513999999999999,\"y\":-30.888},{\"x\":-6.814,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-1",
+                        "pointName": "AP551",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-31.188000000000002},{\"x\":1.814,\"y\":-31.188000000000002},{\"x\":1.814,\"y\":-30.888},{\"x\":1.514,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-2",
+                        "pointName": "AP587",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-32.833999999999996},{\"x\":-10.504000000000001,\"y\":-32.833999999999996},{\"x\":-10.504000000000001,\"y\":-32.534},{\"x\":-10.804,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-2",
+                        "pointName": "AP541",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-32.833999999999996},{\"x\":-6.513999999999999,\"y\":-32.833999999999996},{\"x\":-6.513999999999999,\"y\":-32.534},{\"x\":-6.814,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-2",
+                        "pointName": "AP552",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-32.833999999999996},{\"x\":1.814,\"y\":-32.833999999999996},{\"x\":1.814,\"y\":-32.534},{\"x\":1.514,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-3",
+                        "pointName": "AP589",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-34.34700000000001},{\"x\":-10.504000000000001,\"y\":-34.34700000000001},{\"x\":-10.504000000000001,\"y\":-34.047},{\"x\":-10.804,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-3",
+                        "pointName": "AP539",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-34.34700000000001},{\"x\":-6.513999999999999,\"y\":-34.34700000000001},{\"x\":-6.513999999999999,\"y\":-34.047},{\"x\":-6.814,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-3",
+                        "pointName": "AP553",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-34.34700000000001},{\"x\":1.814,\"y\":-34.34700000000001},{\"x\":1.814,\"y\":-34.047},{\"x\":1.514,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-4",
+                        "pointName": "AP591",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-35.94499999999999},{\"x\":-10.504000000000001,\"y\":-35.94499999999999},{\"x\":-10.504000000000001,\"y\":-35.64500000000001},{\"x\":-10.804,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-4",
+                        "pointName": "AP540",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-35.94499999999999},{\"x\":-6.513999999999999,\"y\":-35.94499999999999},{\"x\":-6.513999999999999,\"y\":-35.64500000000001},{\"x\":-6.814,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-4",
+                        "pointName": "AP554",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-35.94499999999999},{\"x\":1.814,\"y\":-35.94499999999999},{\"x\":1.814,\"y\":-35.64500000000001},{\"x\":1.514,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-2",
+                        "pointName": "AP613",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -14.099
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-14.249},{\"x\":-3.735,\"y\":-14.249},{\"x\":-3.735,\"y\":-13.949000000000002},{\"x\":-4.035,\"y\":-13.949000000000002}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-3",
+                        "pointName": "AP614",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -15.519
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-15.669},{\"x\":-3.735,\"y\":-15.669},{\"x\":-3.735,\"y\":-15.369000000000002},{\"x\":-4.035,\"y\":-15.369000000000002}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-4",
+                        "pointName": "AP615",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -16.959
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-17.109},{\"x\":-3.735,\"y\":-17.109},{\"x\":-3.735,\"y\":-16.808999999999997},{\"x\":-4.035,\"y\":-16.808999999999997}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-5",
+                        "pointName": "AP616",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -18.389
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-18.539},{\"x\":-3.735,\"y\":-18.539},{\"x\":-3.735,\"y\":-18.238999999999997},{\"x\":-4.035,\"y\":-18.238999999999997}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "floor": 1
+    },
+    {
+        "scale": 0.66,
+        "origin": {
+            "x": 0,
+            "y": 0
+        },
+        "robotGroups": [
+            {
+                "id": "56f24d50",
+                "label": "RG56f24d50",
+                "robots": []
+            }
+        ],
+        "robotLabels": [],
+        "robots": [],
+        "points": [
+            {
+                "id": "10000011",
+                "name": "LM11",
+                "x": 0.04,
+                "y": -4.741,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            },
+            {
+                "id": "10000021",
+                "name": "LM21",
+                "x": 3.807,
+                "y": -4.741,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            },
+            {
+                "id": "10000005",
+                "name": "LM5",
+                "x": 3.807,
+                "y": -1.891,
+                "type": 11,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "1998661793706377218"
+            },
+            {
+                "id": "10000051",
+                "name": "LM51",
+                "x": -3.22,
+                "y": -4.741,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            },
+            {
+                "id": "14000052",
+                "name": "AP52",
+                "x": 0.036,
+                "y": -0.455,
+                "type": 15,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "associatedStorageLocations": [
+                    "A3e793110_AP52_1"
+                ]
+            },
+            {
+                "id": "17000053",
+                "name": "CP53",
+                "x": 0.036,
+                "y": -6.067,
+                "type": 13,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "robots": [],
+                "enabled": 1
+            },
+            {
+                "id": "11000054",
+                "name": "PP54",
+                "x": 3.824,
+                "y": -6.067,
+                "type": 14,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ],
+                "robots": [],
+                "enabled": 1
+            },
+            {
+                "id": "10000055",
+                "name": "LM55",
+                "x": -4.937,
+                "y": -3.353,
+                "type": 1,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "spin",
+                        "type": "bool",
+                        "value": "ZmFsc2U=",
+                        "boolValue": false
+                    }
+                ]
+            }
+        ],
+        "routes": [
+            {
+                "id": "1000005110000055",
+                "desc": "LM51-LM55",
+                "from": "10000051",
+                "to": "10000055",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": -3.794,
+                    "y": -4.278
+                },
+                "c2": {
+                    "x": -4.365,
+                    "y": -3.815
+                }
+            },
+            {
+                "id": "1000005510000051",
+                "desc": "LM55-LM51",
+                "from": "10000055",
+                "to": "10000051",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": -4.365,
+                    "y": -3.815
+                },
+                "c2": {
+                    "x": -3.794,
+                    "y": -4.278
+                }
+            },
+            {
+                "id": "1100005410000021",
+                "desc": "PP54-LM21",
+                "from": "11000054",
+                "to": "10000021",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.817,
+                    "y": -5.625
+                },
+                "c2": {
+                    "x": 3.811,
+                    "y": -5.183
+                }
+            },
+            {
+                "id": "1000002111000054",
+                "desc": "LM21-PP54",
+                "from": "10000021",
+                "to": "11000054",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.811,
+                    "y": -5.183
+                },
+                "c2": {
+                    "x": 3.817,
+                    "y": -5.625
+                }
+            },
+            {
+                "id": "1700005310000011",
+                "desc": "CP53-LM11",
+                "from": "17000053",
+                "to": "10000011",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 0.036,
+                    "y": -5.625
+                },
+                "c2": {
+                    "x": 0.04,
+                    "y": -5.183
+                }
+            },
+            {
+                "id": "1000001117000053",
+                "desc": "LM11-CP53",
+                "from": "10000011",
+                "to": "17000053",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 0.04,
+                    "y": -5.183
+                },
+                "c2": {
+                    "x": 0.036,
+                    "y": -5.625
+                }
+            },
+            {
+                "id": "1000001114000052",
+                "desc": "LM11-AP52",
+                "from": "10000011",
+                "to": "14000052",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 0.04,
+                    "y": -3.312
+                },
+                "c2": {
+                    "x": 0.036,
+                    "y": -1.884
+                }
+            },
+            {
+                "id": "1400005210000011",
+                "desc": "AP52-LM11",
+                "from": "14000052",
+                "to": "10000011",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 0.036,
+                    "y": -1.884
+                },
+                "c2": {
+                    "x": 0.04,
+                    "y": -3.312
+                }
+            },
+            {
+                "id": "1000000510000021",
+                "desc": "LM5-LM21",
+                "from": "10000005",
+                "to": "10000021",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.807,
+                    "y": -2.841
+                },
+                "c2": {
+                    "x": 3.807,
+                    "y": -3.791
+                }
+            },
+            {
+                "id": "1000002110000005",
+                "desc": "LM21-LM5",
+                "from": "10000021",
+                "to": "10000005",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 3.807,
+                    "y": -3.791
+                },
+                "c2": {
+                    "x": 3.807,
+                    "y": -2.841
+                }
+            },
+            {
+                "id": "1000002110000011",
+                "desc": "LM21-LM11",
+                "from": "10000021",
+                "to": "10000011",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 2.551,
+                    "y": -4.741
+                },
+                "c2": {
+                    "x": 1.296,
+                    "y": -4.741
+                }
+            },
+            {
+                "id": "1000001110000021",
+                "desc": "LM11-LM21",
+                "from": "10000011",
+                "to": "10000021",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": 1.296,
+                    "y": -4.741
+                },
+                "c2": {
+                    "x": 2.551,
+                    "y": -4.741
+                }
+            },
+            {
+                "id": "1000001110000051",
+                "desc": "LM11-LM51",
+                "from": "10000011",
+                "to": "10000051",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": -1.048,
+                    "y": -4.741
+                },
+                "c2": {
+                    "x": -2.136,
+                    "y": -4.741
+                }
+            },
+            {
+                "id": "1000005110000011",
+                "desc": "LM51-LM11",
+                "from": "10000051",
+                "to": "10000011",
+                "type": "bezier3",
+                "pass": 0,
+                "config": {},
+                "properties": [
+                    {
+                        "key": "direction",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    },
+                    {
+                        "key": "movestyle",
+                        "type": "int",
+                        "value": "MA==",
+                        "int32Value": 0,
+                        "boolValue": false
+                    }
+                ],
+                "deviceId": "",
+                "c1": {
+                    "x": -2.136,
+                    "y": -4.741
+                },
+                "c2": {
+                    "x": -1.048,
+                    "y": -4.741
+                }
+            }
+        ],
+        "areas": [
+            {
+                "id": "3e793110",
+                "name": "A3e793110",
+                "x": 510,
+                "y": 638.9,
+                "w": 186.3,
+                "h": 183,
+                "type": 1,
+                "config": {},
+                "routes": [],
+                "doorDeviceId": "",
+                "points": [
+                    "AP52"
+                ],
+                "storageLocations": [
+                    {
+                        "AP52": [
+                            "A3e793110_AP52_1"
+                        ]
+                    }
+                ],
+                "inoutflag": 2
+            }
+        ],
+        "blocks": "",
+        "colorConfig": {
+            "point": {
+                "small": {
+                    "stroke": "#8C8C8C",
+                    "strokeActive": "#EBB214",
+                    "fill": {
+                        "1": "#14D1A5",
+                        "2": "#69C6F5",
+                        "3": "#E48B1D",
+                        "4": "#E48B1D",
+                        "5": "#a72b69",
+                        "6": "#E63A3A",
+                        "7": "#db0d66"
+                    }
+                },
+                "large": {
+                    "stroke": "#595959",
+                    "strokeActive": "#EBB214",
+                    "strokeOccupied": "#ff4d4f",
+                    "strokeUnoccupied": "#52c41a",
+                    "strokeEmpty": "#1890ff",
+                    "strokeDisabled": "#bfbfbf",
+                    "strokeEnabled": "#52c41a",
+                    "strokeLocked": "#faad14",
+                    "strokeUnlocked": "#52c41a"
+                },
+                "types": {
+                    "1": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#14D1A5"
+                    },
+                    "2": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#69C6F5"
+                    },
+                    "3": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#E48B1D"
+                    },
+                    "4": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#E48B1D"
+                    },
+                    "5": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#a72b69"
+                    },
+                    "7": {
+                        "stroke": "#8C8C8C",
+                        "strokeActive": "#EBB214",
+                        "fill": "#14D1A5"
+                    },
+                    "11": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "12": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "13": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "14": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "15": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    },
+                    "16": {
+                        "stroke": "#595959",
+                        "strokeActive": "#EBB214"
+                    }
+                }
+            },
+            "route": {
+                "strokeActive": "#EBB214",
+                "strokeNone": "#8C8C8C",
+                "strokeEmpty": "#52C41A",
+                "strokeLoaded": "#1982F3",
+                "strokeForbidden": "#E63A3A",
+                "width": {
+                    "normal": 2,
+                    "active": 3
+                }
+            },
+            "area": {
+                "strokeActive": "#EBB214",
+                "stroke": {
+                    "1": "#9ACDFF99",
+                    "11": "#FF535399",
+                    "12": "#0DBB8A99",
+                    "13": "#e61e4aad",
+                    "14": "#FFD70099",
+                    "15": "transparent"
+                },
+                "fill": {
+                    "1": "#9ACDFF33",
+                    "11": "#FF9A9A33",
+                    "12": "#0DBB8A33",
+                    "13": "#e61e4a33",
+                    "14": "#FFD70033",
+                    "15": "transparent"
+                },
+                "border": {
+                    "width": 1,
+                    "opacity": 0.15,
+                    "colors": {
+                        "1": "#1890FF",
+                        "11": "#FF4D4F",
+                        "12": "#52C41A",
+                        "13": "#FA8C16",
+                        "14": "#722ED1",
+                        "15": "transparent"
+                    }
+                },
+                "types": {
+                    "1": {
+                        "stroke": "#9ACDFF99",
+                        "strokeActive": "#EBB214",
+                        "fill": "#9ACDFF33",
+                        "borderColor": "#1890FF",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "11": {
+                        "stroke": "#FF535399",
+                        "strokeActive": "#EBB214",
+                        "fill": "#FF9A9A33",
+                        "borderColor": "#FF4D4F",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "12": {
+                        "stroke": "#0DBB8A99",
+                        "strokeActive": "#EBB214",
+                        "fill": "#0DBB8A33",
+                        "borderColor": "#52C41A",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "13": {
+                        "stroke": "#e61e4aad",
+                        "strokeActive": "#EBB214",
+                        "fill": "#e61e4a33",
+                        "borderColor": "#FA8C16",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "14": {
+                        "stroke": "#FFD70099",
+                        "strokeActive": "#EBB214",
+                        "fill": "#FFD70033",
+                        "borderColor": "#722ED1",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.15
+                    },
+                    "15": {
+                        "stroke": "transparent",
+                        "strokeActive": "transparent",
+                        "fill": "transparent",
+                        "borderColor": "transparent",
+                        "borderWidth": 1,
+                        "borderOpacity": 0.22
+                    }
+                }
+            },
+            "robot": {
+                "stroke": "#01FDAF99",
+                "fill": "#01FAAD33",
+                "line": "#01fdaf",
+                "strokeNormal": "#01FDAF99",
+                "fillNormal": "#01FAAD33",
+                "strokeWarning": "#FF851B99",
+                "fillWarning": "#FF851B33",
+                "strokeFault": "#FF4D4F99",
+                "fillFault": "#FF4D4F33",
+                "imageWidth": 42,
+                "imageHeight": 76,
+                "customImages": {},
+                "useCustomImages": false
+            },
+            "storage": {
+                "occupied": "#ff4d4f",
+                "available": "#52c41a",
+                "default": "#f5f5f5",
+                "locked": "#faad14",
+                "moreButton": {
+                    "background": "#e6f4ff",
+                    "border": "#1677ff",
+                    "text": "#1677ff"
+                }
+            },
+            "autoDoor": {
+                "strokeClosed": "#FF4D4F99",
+                "fillClosed": "#FF4D4F33",
+                "strokeOpen": "#1890FF99",
+                "fillOpen": "#1890FF33"
+            },
+            "common": {
+                "color": "#595959",
+                "background": "#F0F2F5"
+            }
+        },
+        "id": 1765531813,
+        "setting": "",
+        "ratio": 100,
+        "name": "floor_2_smap_content_1",
+        "width": 11.8,
+        "height": 13.96,
+        "floors": 2,
+        "binLocationsList": [
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-1",
+                        "pointName": "AP155",
+                        "pos": {
+                            "x": -1.137,
+                            "y": -23.307
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-1.287,\"y\":-23.456999999999997},{\"x\":-0.9870000000000002,\"y\":-23.456999999999997},{\"x\":-0.9870000000000002,\"y\":-23.156999999999996},{\"x\":-1.287,\"y\":-23.156999999999996}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-2",
+                        "pointName": "AP154",
+                        "pos": {
+                            "x": 0.619,
+                            "y": -23.355
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":0.4689999999999999,\"y\":-23.505},{\"x\":0.769,\"y\":-23.505},{\"x\":0.769,\"y\":-23.205},{\"x\":0.4689999999999999,\"y\":-23.205}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "WH-3",
+                        "pointName": "AP529",
+                        "pos": {
+                            "x": 2.354,
+                            "y": -23.355
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":2.204,\"y\":-23.505},{\"x\":2.504,\"y\":-23.505},{\"x\":2.504,\"y\":-23.205},{\"x\":2.204,\"y\":-23.205}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"HrLoad\": {\n            \"height\": 0.05,\n            \"loadType\": \"1\",\n            \"loadid\": \"00000015\",\n            \"operation\": \"Forkload\"\n        }\n    },\n    {\n        \"HrUnload\": {\n            \"height\": 0,\n            \"operation\": \"ForkUnload\"\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-1",
+                        "pointName": "AP585",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-31.188000000000002},{\"x\":-10.504000000000001,\"y\":-31.188000000000002},{\"x\":-10.504000000000001,\"y\":-30.888},{\"x\":-10.804,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-1",
+                        "pointName": "AP542",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-31.188000000000002},{\"x\":-6.513999999999999,\"y\":-31.188000000000002},{\"x\":-6.513999999999999,\"y\":-30.888},{\"x\":-6.814,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-1",
+                        "pointName": "AP551",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -31.038
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-31.188000000000002},{\"x\":1.814,\"y\":-31.188000000000002},{\"x\":1.814,\"y\":-30.888},{\"x\":1.514,\"y\":-30.888}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-2",
+                        "pointName": "AP587",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-32.833999999999996},{\"x\":-10.504000000000001,\"y\":-32.833999999999996},{\"x\":-10.504000000000001,\"y\":-32.534},{\"x\":-10.804,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-2",
+                        "pointName": "AP541",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-32.833999999999996},{\"x\":-6.513999999999999,\"y\":-32.833999999999996},{\"x\":-6.513999999999999,\"y\":-32.534},{\"x\":-6.814,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-2",
+                        "pointName": "AP552",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -32.684
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-32.833999999999996},{\"x\":1.814,\"y\":-32.833999999999996},{\"x\":1.814,\"y\":-32.534},{\"x\":1.514,\"y\":-32.534}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-3",
+                        "pointName": "AP589",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-34.34700000000001},{\"x\":-10.504000000000001,\"y\":-34.34700000000001},{\"x\":-10.504000000000001,\"y\":-34.047},{\"x\":-10.804,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-3",
+                        "pointName": "AP539",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-34.34700000000001},{\"x\":-6.513999999999999,\"y\":-34.34700000000001},{\"x\":-6.513999999999999,\"y\":-34.047},{\"x\":-6.814,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-3",
+                        "pointName": "AP553",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -34.197
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-34.34700000000001},{\"x\":1.814,\"y\":-34.34700000000001},{\"x\":1.814,\"y\":-34.047},{\"x\":1.514,\"y\":-34.047}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-1-4",
+                        "pointName": "AP591",
+                        "pos": {
+                            "x": -10.654,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-10.804,\"y\":-35.94499999999999},{\"x\":-10.504000000000001,\"y\":-35.94499999999999},{\"x\":-10.504000000000001,\"y\":-35.64500000000001},{\"x\":-10.804,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-2-4",
+                        "pointName": "AP540",
+                        "pos": {
+                            "x": -6.664,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-6.814,\"y\":-35.94499999999999},{\"x\":-6.513999999999999,\"y\":-35.94499999999999},{\"x\":-6.513999999999999,\"y\":-35.64500000000001},{\"x\":-6.814,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-3-3-4",
+                        "pointName": "AP554",
+                        "pos": {
+                            "x": 1.664,
+                            "y": -35.795
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":1.514,\"y\":-35.94499999999999},{\"x\":1.814,\"y\":-35.94499999999999},{\"x\":1.814,\"y\":-35.64500000000001},{\"x\":1.514,\"y\":-35.64500000000001}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-2",
+                        "pointName": "AP613",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -14.099
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-14.249},{\"x\":-3.735,\"y\":-14.249},{\"x\":-3.735,\"y\":-13.949000000000002},{\"x\":-4.035,\"y\":-13.949000000000002}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-3",
+                        "pointName": "AP614",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -15.519
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-15.669},{\"x\":-3.735,\"y\":-15.669},{\"x\":-3.735,\"y\":-15.369000000000002},{\"x\":-4.035,\"y\":-15.369000000000002}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-4",
+                        "pointName": "AP615",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -16.959
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-17.109},{\"x\":-3.735,\"y\":-17.109},{\"x\":-3.735,\"y\":-16.808999999999997},{\"x\":-4.035,\"y\":-16.808999999999997}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "binLocationList": [
+                    {
+                        "className": "GeneralLocation",
+                        "instanceName": "GSA-4-1-5",
+                        "pointName": "AP616",
+                        "pos": {
+                            "x": -3.885,
+                            "y": -18.389
+                        },
+                        "property": [
+                            {
+                                "key": "points",
+                                "type": "json",
+                                "stringValue": "[{\"x\":-4.035,\"y\":-18.539},{\"x\":-3.735,\"y\":-18.539},{\"x\":-3.735,\"y\":-18.238999999999997},{\"x\":-4.035,\"y\":-18.238999999999997}]"
+                            },
+                            {
+                                "key": "binTask",
+                                "type": "json",
+                                "stringValue": "[\n    {\n        \"JackLoad\": {\n            \"operation\": \"JackLoad\",\n            \"recfile\": \"shelf/BD1.shelf\",\n            \"recognize\": true,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    },\n    {\n        \"JackUnload\": {\n            \"operation\": \"JackUnload\",\n            \"recognize\": false,\n            \"use_down_pgv\": false,\n            \"use_pgv\": false\n        }\n    }\n]\n"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "floor": 2
+    }
+]

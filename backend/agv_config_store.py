@@ -5,10 +5,7 @@ from pathlib import Path
 import threading
 from typing import Any, Dict, Optional
 
-try:
-    from SimVehicleSys.config.settings import get_config  # type: ignore
-except Exception:  # pragma: no cover
-    get_config = None  # type: ignore
+get_config = None  # SimVehicleSys not available
 from .schemas import AGVRuntime
 
 
